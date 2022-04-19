@@ -7,6 +7,10 @@
 # 2. Escriba un programa que solicite el nombre del usuario y luego muestre el mensaje de salida
 # “Hola nombre”, donde nombre es el nombre que ingresó el usuario.
 
+import console
+
+console.clear()
+
 print("¿Cuál es su nombre?")
 nombre = input()
-print(f"Hola {nombre}")
+print(f"\nHola {nombre}\n")

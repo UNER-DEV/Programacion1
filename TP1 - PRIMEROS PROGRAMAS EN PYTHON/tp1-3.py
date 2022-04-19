@@ -7,8 +7,12 @@
 # 3. Solicite al usuario su nombre y luego solicite su apellido y por último muestre el mensaje de
 # salida “Hola nombre apellido”.
 
+import console
+
+console.clear()
+
 print("¿Cuál es su nombre?")
 nombre = input()
-print("¿Y su apellido?")
+print("\n¿Y su apellido?")
 apellido = input()
-print(f"Hola {nombre} {apellido}")
+print(f"\nHola {nombre} {apellido}\n")

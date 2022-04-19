@@ -7,8 +7,12 @@
 # 4. Pida al usuario que ingrese 2 números para luego sumarlos y mostrar en pantalla: “La
 # respuesta es XX”.
 
+import console
+
+console.clear()
+
 print("Ingrese el primer número")
 numero1 = int(input())
-print("Ingrese el segundo número")
+print("\nIngrese el segundo número")
 numero2 = int(input())
-print(f"La suma de ambos es >> {numero1 + numero2}")
+print(f"\nOperacion realizada >> {numero1} + {numero2} = {numero1 + numero2}\n")

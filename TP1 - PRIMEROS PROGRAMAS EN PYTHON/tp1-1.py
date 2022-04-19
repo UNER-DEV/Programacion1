@@ -6,4 +6,8 @@
 
 #1. Mostrar por pantalla: “Hola Mundo, esto es Python!”.
 
-print("Hola Mundo, esto es Python!")
+import console
+
+console.clear()
+
+print("Hola Mundo, esto es Python!\n")
