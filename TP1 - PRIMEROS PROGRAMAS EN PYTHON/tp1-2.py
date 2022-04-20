@@ -11,6 +11,5 @@ import console
 
 console.clear()
 
-print("¿Cuál es su nombre?")
-nombre = input()
+nombre = input("¿Cuál es su nombre? >> ")
 print(f"\nHola {nombre}\n")

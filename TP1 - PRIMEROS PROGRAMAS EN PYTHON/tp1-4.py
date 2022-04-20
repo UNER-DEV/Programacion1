@@ -10,9 +10,7 @@
 import console
 
 console.clear()
-
-print("Ingrese el primer número")
-numero1 = int(input())
-print("\nIngrese el segundo número")
-numero2 = int(input())
-print(f"\nOperacion realizada >> {numero1} + {numero2} = {numero1 + numero2}\n")
+    
+numero1 = int(input("Ingrese el primer número\t>>\t"))
+numero2 = int(input("\nIngrese el segundo número\t>>\t"))
+print(f"\nLA SUMA ENTRE AMBOS ES \t\t>>\t{numero1 + numero2}\n")
