@@ -1,4 +1,10 @@
-import os
+# INTEGRANTES:
+    # Camila Laureana Silva
+    # Federico José Rodriguez
+    # María Emilia Walter
+    # Sebastian Ignacio Centurion
+
+import os                           # Modulo que nos provee funcionalidades del Sistema Operativo
 
 def clear():
     command = 'clear'               # 'clear' es el comando ejecutable para los Sistemas Operativos MAC y Linux
