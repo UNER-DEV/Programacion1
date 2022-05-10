@@ -1,3 +1,6 @@
+# 12. Que solicite al usuario ingresar una frase.
+# Luego, que imprima la cantidad de vocales que se encuentran en dicha frase.
+
 from modules.utils import *
 
 clear()

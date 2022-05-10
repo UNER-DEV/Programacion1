@@ -1,3 +1,5 @@
+# 6. Que pida al usuario una palabra y la muestre por pantalla 10 veces.
+
 from modules.utils import *
 
 clear()

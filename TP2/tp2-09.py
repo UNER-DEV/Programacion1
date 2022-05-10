@@ -1,3 +1,7 @@
+# 9. Que el usuario ingrese dos números y muestre cuál de los dos es menor.
+# Considerar el caso en que ambos números son iguales.
+
+
 from modules.utils import *
 
 clear()

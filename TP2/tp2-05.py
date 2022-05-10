@@ -1,3 +1,5 @@
+# 5. Que dado tres números ingresados por el usuario nos devuelva el promedio.
+
 from modules.utils import *
 
 clear()

@@ -1,3 +1,5 @@
+# 18. Que muestre todos los números primos entre 0 y 100 e imprima cuántos números primos hay.
+
 from modules.utils import *
 
 clear()

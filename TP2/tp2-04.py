@@ -1,3 +1,5 @@
+# 4. Que dada la base y altura de un triángulo nos calcule su área.
+
 from modules.utils import *
 
 clear()

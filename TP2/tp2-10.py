@@ -1,3 +1,7 @@
+# 10. Que reciba como parámetro un número y
+# retorne “TRUE” si el número es par ó “FALSE” si es impar.
+
+
 from modules.utils import *
 
 clear()
