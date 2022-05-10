@@ -1,15 +1,9 @@
-# INTEGRANTES:
-    # Camila Laureana Silva
-    # Federico José Rodriguez
-    # María Emilia Walter
-    # Sebastian Ignacio Centurion
-
 # 7. Pida al usuario un número x de días 
 # y luego mostrar por pantalla cuántas horas, minutos y segundos son esos números de días 
 
-import console
+from modules.utils import *
 
-console.clear()
+clear()
 
 cantDias = int(input("Ingrese una cantidad de dias >> "))
 

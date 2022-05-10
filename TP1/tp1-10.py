@@ -1,20 +1,14 @@
-# INTEGRANTES:
-    # Camila Laureana Silva
-    # Federico José Rodriguez
-    # María Emilia Walter
-    # Sebastian Ignacio Centurion
-
 # 10. Escriba un programa que indique si un texto es palíndromo, 
 # es decir, se escribe igual al derecho que al revés. 
 # Por ejemplo: rayar, kayak, somos.
 
-import console
+from modules.utils import *
 
-console.clear()
+clear()
 
 texto = str(input("Ingrese un texto: "))
 
-if texto.lower().replace(" ","") == texto[::-1].lower().replace(" ",""):
+if normalizar(texto).replace(" ","") == normalizar(texto[::-1]).replace(" ",""):
     print("\nEs palindromo\n")
 else:
     print("\nNo es palindromo\n")

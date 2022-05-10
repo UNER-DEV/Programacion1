@@ -1,15 +1,9 @@
-# INTEGRANTES:
-    # Camila Laureana Silva
-    # Federico José Rodriguez
-    # María Emilia Walter
-    # Sebastian Ignacio Centurion
-
 # 8. Escriba un programa que permita al usuario ingresar la base y altura de un triángulo 
 # para luego imprimir por pantalla la superficie total.
 
-import console
+from modules.utils import *
 
-console.clear()
+clear()
 
 base = float(input("Ingrese la base del triangulo >> "))
 altura = float(input("Ingrese la altura del triangulo >> "))

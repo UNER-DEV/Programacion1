@@ -1,14 +1,8 @@
-# INTEGRANTES:
-    # Camila Laureana Silva
-    # Federico José Rodriguez
-    # María Emilia Walter
-    # Sebastian Ignacio Centurion
-
 # 9. Pida al usuario que ingrese un texto para luego imprimirlo al revés. Ej: HOLA -> ALOH
 
-import console
+from modules.utils import *
 
-console.clear()
+clear()
 
 msg = "Ingrese un mensaje >> "
 

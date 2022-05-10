@@ -1,18 +1,12 @@
-# INTEGRANTES:
-    # Camila Laureana Silva
-    # Federico José Rodriguez
-    # María Emilia Walter
-    # Sebastian Ignacio Centurion
-
 # 12. Pedir al usuario que ingrese una fecha en formato dd/mm/aaaa 
 # e imprimir en pantalla el día, mes y año. 
 # Ej: Usuario ingresa: 17/05/1985
 # Programa imprime: Día: 17, Mes: 05 y Año: 1985
 
-import console
 import re
+from modules.utils import *
 
-console.clear()
+clear()
 
 while True:
     formato = "^(3[01]|[12][0-9]|0[1-9])/(1[0-2]|0[1-9])/[0-9]{4}$"
