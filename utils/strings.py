@@ -1,3 +1,9 @@
+def crearCartel(str):
+    espacios = ' ' * 20 
+    centro = '|' + espacios + str + espacios + '|'
+    borde = '-' * len(centro)
+    print(f'{borde}\n{centro}\n{borde}')
+
 def normalizar(str):
     reemplazo = (
         ("á", "a"),
@@ -12,7 +18,7 @@ def normalizar(str):
 
 def checkInputSiNo(value):
     while True:
-        print('\n\t\tIngrese por consola [SI] o [NO]')
+        crearCartel('Ingrese por consola [SI] o [NO]')
         msg = normalizar(str(input(value)))
         if(msg == 'si' or msg == 'no'):
             break
@@ -20,7 +26,7 @@ def checkInputSiNo(value):
 
 def checkInputSexo(value):
     while True:
-        print('\n\t\tIngrese por consola [F] por Femenino o [M] por Masculino')
+        crearCartel('Ingrese por consola [F] por Femenino o [M] por Masculino')
         msg = normalizar(str(input(value)))
         if(msg == 'f' or msg == 'm'):
             break

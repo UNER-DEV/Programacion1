@@ -1,23 +1,30 @@
-# 2.Pedir al usuario que ingrese 5 números para luego almacenarlos en una lista y ordenarlos.
-# Imprimir por pantalla el resultado.
-
 from modules.utils import *
+
+# --------------------------------------------------
+# 2. Pedir al usuario que ingrese 5 números 
+# para luego almacenarlos en una lista y ordenarlos.
+# Imprimir por pantalla el resultado.
+# --------------------------------------------------
 
 clear()
 
-def lista_ordenada(numeros):
-    list1 = list(map(int, numeros.split()))
-    return sorted(list1)
-    
+lst_numeros = []
 
+for i in range(0,5):
+    while True:
+        crearCartel('Por favor, ingrese un numero y no otro caracter')
+        elemento = input(f'Ingrese el #{i+1} numero >> ')
+        clear()
+        if elemento.isnumeric():
+            lst_numeros.append(int(elemento))
+            break
 
-while True:
-    num=input('Ingrese 5 números aleatorios separados por un espacio >> ')
-    if len(num.split())==5:
-        print(f"\nLos números ingresados en orden ascendente son {lista_ordenada(num)}")
-        break
-    clear()
-    print(f"No introdujo la cantidad correspondiente de números. Intente nuevamente...\n")
-        
-    
+print(f'\nLa lista ordenada es la siguiente: {sorted(lst_numeros)}\n')
 
+# --------------------------------------------------
+
+if(checkInputSiNo('Desea volver al MENU PRINCIPAL? >> ') == 'si'):
+    exec(open(rutaMenu).read())
+else:
+    print(f'\n[Este programa ha finalizado]\n')
+    exit()

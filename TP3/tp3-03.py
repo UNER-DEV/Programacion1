@@ -1,25 +1,33 @@
-# 3.Dada la siguiente lista de frutas [“banana”, “manzana”, “pera”], permitir al usuario ingresar 3 frutas más para agregarlas al final de lista. Luego, mostrar por pantalla la lista completa y debajo la misma lista pero sólo con las frutas que añadió el usuario.
-
 from modules.utils import *
+
+# ----------------------------------------------------------------------------
+# 3. Dada la siguiente lista de frutas ['banana', 'manzana', 'pera'],
+# permitir al usuario ingresar 3 frutas mas para agregarlas al final de lista.
+# Luego, mostrar por pantalla la lista completa y
+# debajo la misma lista pero solo con las frutas que añadio el usuario
+# ----------------------------------------------------------------------------
 
 clear()
 
-lista_frutas = ['banana', 'manzana', 'pera']
-nueva_lista = []
-
+lst_frutas = ['banana','manzana','pera']
 
 while True:
-    print(f"\nLa lista de frutas actual es la siguiente: {lista_frutas+nueva_lista}\n")
-    if len(nueva_lista)==3:
+    print(f'\nLa lista de frutas actual es la siguiente: {lst_frutas}\n')
+    if len(lst_frutas)==6:
         break
-    fruta=normalizar(input('Por favor, ingrese una fruta distinta a la de la lista >> '))
-    if fruta not in lista_frutas and fruta not in nueva_lista:
-        nueva_lista.append(fruta)
+    fruta=normalizar(str(input('Por favor, ingrese una fruta distinta a la de la lista >> ')))
+    clear()
+    if fruta not in lst_frutas:
+        lst_frutas.append(fruta)
     else:
-        print(f"\nLa fruta ya se encuentra en la lista. Ingrese otra... \n")
+        crearCartel('La fruta ya se encuentra en la lista. Ingrese otra...')
 
+print(f'Lista completa >> {lst_frutas}\nFrutas que ingreso >> {lst_frutas[3:]}\n')
 
-clear()    
-print(f"\nLa lista completa de frutas es la siguiente: {lista_frutas+nueva_lista}\n")
-print(f"\nLas frutas ingresadas por el usuario son: {nueva_lista}\n")
+# ----------------------------------------------------------------------------
 
+if(checkInputSiNo('Desea volver al MENU PRINCIPAL? >> ') == 'si'):
+    exec(open(rutaMenu).read())
+else:
+    print(f'\n[Este programa ha finalizado]\n')
+    exit()

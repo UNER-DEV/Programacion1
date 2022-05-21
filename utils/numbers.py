@@ -30,10 +30,10 @@ def EsParOImpar(num):
     return value
 
 def checkNumero(num):
-    check = re.compile(r'^\-?[1-9][0-9]*$')
-    value = re.match(check,num)
-    if value:
+     check = re.compile(r'^\-?[1-9][0-9]*$')
+     value = re.match(check,num)
+     if value:
         return num
-    else:
+     else:
         print("Por favor, ingrese un número y no otro caracter")
 
