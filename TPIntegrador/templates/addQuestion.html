@@ -1,0 +1,47 @@
+{% extends './layout.html' %}
+{%block title%}añadir preguntas{%endblock%}
+
+{%block body%}
+
+<div class="container-fluid">
+    <form>
+        <div class="mb-3">
+            <label for="questionInput" class="form-label">Ingrese la pregunta a añadir</label>
+            <input type="text" class="form-control" id="questionInput" placeholder="¿ Qué lenguajes más comunes son de alto nivel?">
+          </div>
+          <div class="mb-3">
+            <label for="questionOptionA" class="form-label">Opción A:</label>
+            <input type="text" class="form-control" id="questionOptionA">
+        </div>
+        <div class="mb-3">
+            <label for="questionOptionB" class="form-label">Opción B:</label>
+            <input type="text" class="form-control" id="questionOptionB">
+        </div>
+        <div class="mb-3">
+            <label for="questionOptionC" class="form-label">Opción C:</label>
+            <input type="text" class="form-control" id="questionOptionC">
+        </div>
+        <div class="mb-3">
+            <label for="questionOptionD" class="form-label">Opción D:</label>
+            <input type="text" class="form-control" id="questionOptionD">
+        </div>
+
+        <div class="mb-3">
+        <label for="escalonSelector" class="form-label">Escalón a añadir la pregunta:</label>
+        <select class="form-select" aria-label="Default_select" id="escalonSelector">
+            <option selected disabled>Seleccione...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+
+    </form>
+</div>
+
+{%endblock%}

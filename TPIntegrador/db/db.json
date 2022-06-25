@@ -1,0 +1,88 @@
+{
+  "1": [
+    {
+      "pregunta": "Cuanto es 2 x 2 + 4",
+      "a": "4",
+      "b": "12",
+      "c": "8",
+      "respuesta": "8"
+    },
+    {
+      "pregunta": "Cuanto es 0 x 2 + 0",
+      "a": "0",
+      "b": "2",
+      "c": "4",
+      "respuesta": "0"
+    }
+  ],
+  "2": [
+    {
+      "pregunta": "Cuanto es 2 x 0 + 5",
+      "a": "10",
+      "b": "0",
+      "c": "5",
+      "respuesta": "a"
+    },
+    {
+      "pregunta": "Cuanto es 3 x 2 + 0",
+      "a": "4",
+      "b": "12",
+      "c": "6",
+      "respuesta": "6"
+    }
+  ],
+  "3": [
+    {
+      "pregunta": "pregunta 3",
+      "a": "respuesta a",
+      "b": "respuesta b",
+      "c": "respuesta correcta",
+      "respuesta": "c"
+    }
+  ],
+  "4": [
+    {
+      "pregunta": "pregunta 4",
+      "a": "respuesta a",
+      "b": "respuesta b",
+      "c": "respuesta correcta",
+      "respuesta": "c"
+    }
+  ],
+  "5": [
+    {
+      "pregunta": "pregunta 5",
+      "a": "respuesta a",
+      "b": "respuesta b",
+      "c": "respuesta correcta",
+      "respuesta": "c"
+    }
+  ],
+  "6": [
+    {
+      "pregunta": "pregunta 6",
+      "a": "respuesta a",
+      "b": "respuesta b",
+      "c": "respuesta correcta",
+      "respuesta": "c"
+    }
+  ],
+  "7": [
+    {
+      "pregunta": "pregunta 7",
+      "a": "respuesta a",
+      "b": "respuesta b",
+      "c": "respuesta correcta",
+      "respuesta": "c"
+    }
+  ],
+  "8": [
+    {
+      "pregunta": "pregunta 8",
+      "a": "respuesta a",
+      "b": "respuesta b",
+      "c": "respuesta correcta",
+      "respuesta": "c"
+    }
+  ]
+}

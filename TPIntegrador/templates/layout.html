@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock %}</title>
+    {% block plugins %}
+    {% endblock %}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='/images/favicon-32x32.png') }}"/>
+    <link href="{{ url_for('static', filename='/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="../static/css/all.css" rel="stylesheet" defer/>
+    <link href="{{ url_for('static', filename='/css/font-awesome.css') }}" rel="stylesheet" defer>
+    <link href="{{ url_for('static', filename='/css/index.css') }}" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light shadow p-3 mb-5 rounded">
+      <div class="container-fluid">
+        <form action="{{ url_for('settings_home') }}" method="post">
+          <button type="submit" class="btn btn-light" value="true" name="reloadHome">
+            <img src=" {{ url_for('static', filename='/images/logo.png') }} " alt="logo" height="100"/>
+          </button>
+        </form>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <form action="{{ url_for('settings_game') }}" method="post">
+              <li class="nav-item flipX">
+                <button type="submit" class="btn btn-light fs-2 text-info" value="true" name="reloadGame">
+                  ¡Vamos a jugar!
+                </button>
+              </li>
+            </form>
+            <form action="{{ url_for('queryScores') }}" method="post">
+              <li class="nav-item flipX">
+                <button type="submit" class="btn btn-light fs-2 text-info" value="true" name="queryScores">
+                  Consultas
+                </button>
+              </li>
+            </form>
+            <form action="{{ url_for('addQuestion') }}">
+              <li class="nav-item flipX">
+                <button type="submit" class="btn btn-light fs-2 text-info" value="true" name="addQuestion">
+                  Añadir pregunta
+                </button>
+              </li>
+            </form>
+          </ul>
+        </div>
+        <form action="{{ url_for('exit') }}" method="post">
+          <button type="submit" class="btn btnExit" value="true" name="exit">
+            SALIR
+          </button>
+        </form>
+      </div>
+    </nav>
+    {% block body %} 
+    {% endblock %}
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/bootstrap.bundle.js"></script>
+  </body>
+
+  <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 shadowFooter">
+    <ul class="nav col-lg-12 justify-content-around w-75">
+      <li class="nav-item">
+        <a href="#" class="nav-link text-white px-3 fs-4">Nosotres</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link text-white px-3 fs-4">Repositorio</a>
+      </li>
+    </ul>
+  </footer>
+
+</html>

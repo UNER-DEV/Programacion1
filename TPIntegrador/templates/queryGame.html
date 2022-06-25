@@ -1,0 +1,51 @@
+{% extends './layout.html' %}
+{%block title%}Consultas{%endblock%} 
+{% block plugins %}
+    <script src="../static/js/jquery-3.5.1.js"></script>
+    <script src="../static/js/jquery.dataTables.min.js" defer></script>
+    <script src="../static/js/dataTables.bootstrap5.min.js" defer></script>
+    <script src="../static/js/dataTable.js" defer></script>    
+    <!-- v--Extension Responsive--v -->
+    <script src="../static/js/dataTables.responsive.min.js" defer></script>
+    <script src="../static/js/responsive.bootstrap5.min.js" defer></script>
+    <link href="../static/css/responsive.bootstrap5.min.css" rel="stylesheet" defer/>
+    <!-- ^--Extension Responsive--^ -->
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="col col-6 align-items-center">
+        <div class="row">
+            <h1>Consultas y añadir preguntas</h1>
+        </div>
+    </div>
+    <table id="tabla" class="table table-striped align-middle table-bordered mt-auto table-sm text-center" style="width:100%">
+        <thead>
+            <tr class="table-dark text-center" >
+                <th>Usuario</th>
+                <th>Puntaje</th>
+                <th>Tiempo_Inicio</th>
+                <th>Tiempo_Fin</th>
+            </tr>
+        </thead>
+        <tbody class="table-secondary">
+            {%for i in range(0, len)%}
+                <tr>
+                    <td>{{data[i]['Usuario']}}</td>
+                    <td>{{data[i]['Puntaje']}}</td>
+                    <td>{{data[i]['Tiempo_Inicio']}}</td>
+                    <td>{{data[i]['Tiempo_Fin']}}</td>
+                </tr>
+            {%endfor%}
+        </tbody>
+        <tfoot>
+            <tr class="table-dark text-center">
+                <th>Usuario</th>
+                <th>Puntaje</th>
+                <th>Tiempo_Inicio</th>
+                <th>Tiempo_Fin</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+{% endblock %}
+    

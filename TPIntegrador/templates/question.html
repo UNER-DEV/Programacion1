@@ -1,0 +1,89 @@
+{% extends './layout.html' %}
+{%block title%}Preguntas{%endblock%}
+{%block plugins%}
+  <script src="../static/js/jquery-3.5.1.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="../static/js/progreesBar.js" defer></script>    
+{%endblock%}
+{% block body %}
+
+<div class="container-fluid bgColor">
+  <h1 id="titleQuestion" class="row row-cols-2 text-center justify-content-center py-3">ESCALÓN {{step}}</h1>
+  <input type="hidden" id="step" value="{{step}}" />
+  <div class="container" >
+    <div class="progress" >
+      <div class="progress-bar progress-bar-striped progress-bar-animated " id="bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="125"></div>
+      <p id="msg"></p>
+    </div>
+  </div>
+  <form class="row row-cols-2 text-center justify-content-center py-3" action="{{ url_for('handle_data') }}" method="POST">
+    <div class="card" style="width: 30em">
+    <div class="card-body mb-4">
+      <h2 class="card-title mt-4">¿{{ data['pregunta'] }}?</h2>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="option"
+            id="a"
+            value="{{data['a']}}"
+          />
+          <label class="form-check-label fs-3 wisteria fw-bold" for="a">
+            {{data['a']}}
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="option"
+            value="{{data['b']}}"
+            id="b"
+          />
+          <label class="form-check-label fs-3 wisteria fw-bold" for="b">
+            {{data['b']}}
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="option"
+            value="{{data['c']}}"
+            id="c"
+          />
+          <label class="form-check-label fs-3 wisteria fw-bold" for="c">
+            {{data['c']}}
+          </label>
+        </div>
+      </li>
+    </ul>
+    <input class="d-none" name="correcto" value="{{data['respuesta']}}" >
+    </input>
+
+    <div class="card-body fs-5">
+      <a class="card-link"><button
+        type="submit"
+        class="btn"
+        id="btnNext"
+        name="btnNext"
+        value="{{ step }}"
+      >SIGUIENTE
+      </button></a>
+    </div>
+  </div>
+</form>
+</div>
+
+
+<!--Previo cierre body-->
+{% endblock %}
+
+<!-- variable local que vaya sumando cuando hace click ==> esto se repite mientras obj sea menor a 8-->
