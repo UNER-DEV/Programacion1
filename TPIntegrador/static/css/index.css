@@ -3,52 +3,63 @@
 }
 
 *{
-padding: 0;
 margin: 0;
+padding: 0;
+}
+
+html,body {
+  height: 100%;
+}
+
+.card {
+  height: 80%;
+  margin: 10%;
+  width: 30rem;
 }
 
 .bgColor{
-    background-image: url('/static/images/background.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
+  background-color: #53b3c9;
+  border-radius: 50px 50px 0px 0px;
+  height: 60rem;
+  margin: 1% 10% 0% 10%;
+  padding: 2%;
+  width: 80%;
 }
 
-.size{
-    height: 120%;
-}
-.shadowFooter{
-    background-color: #f39200;
-    box-shadow: 2px -4px 20px #458a99;
-    bottom: 0px;
-    position: absolute;
-    width: 100%;
+.shadowFooter {
+  background-color: #f39200;
+  box-shadow: 2px -4px 20px #458a99;
+  margin-bottom: 0%;
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
 }
 .altDiv{
     height: 500px;
 }
 
 #letsPlay{
-    background-color:#ffd900;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    font-weight: 500;
-    color: white;
+  background-color:#ffd900;
+  border-radius: 50%;
+  color: white;
+  font-weight: 500;
+  height: 200px;
+  width: 200px;
 }
 #letsPlay:hover{
-background-color: white;
-border-color: #ffd900;
-border-width: 10px;
-color: black;
-font-weight: 500;
+  background-color: white;
+  border-color: #ffd900;
+  border-width: 10px;
+  color: black;
+  font-weight: 500;
 }
 
 .btnExit{
-    background-color:rgb(255, 59, 59);
-    color: white;
-    /*width: 60px;*/
-    height: 60px;
-    border-radius: 100%;
+  /*width: 60px;*/
+  background-color:rgb(255, 59, 59);
+  border-radius: 100%;
+  color: white;
+  height: 60px;
 }
 .btnExit:hover{
   background-color: white;
@@ -58,9 +69,9 @@ font-weight: 500;
 
 #btnNext{
   background-color:#198754;
+  border-radius: 100%;
   color: white;
   height: 90px;
-  border-radius: 100%;
 }
 #btnNext:hover{
   background-color: white;
@@ -69,42 +80,42 @@ font-weight: 500;
 }
 
 p {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0;
-    font-size: 3.5rem;
-  }
+  display: inline-block;
+  font-size: 3.5rem;
+  margin: 0;
+  vertical-align: top;
+}
   
-  .word {
-    position: absolute;
-    opacity: 0;
-  }
+.word {
+  position: absolute;
+  opacity: 0;
+}
   
-  .letter {
-    display: inline-block;
-    position: relative;
-    float: left;
-    transform: translateZ(25px);
-    transform-origin: 50% 50% 25px;
-  }
+.letter {
+  display: inline-block;
+  position: relative;
+  float: left;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+}
   
-  .letter.out {
-    transform: rotateX(90deg);
-    transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  }
+.letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
   
-  .letter.behind {
-    transform: rotateX(-90deg);
-  }
+.letter.behind {
+  transform: rotateX(-90deg);
+}
   
-  .letter.in {
-    transform: rotateX(0deg);
-    transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
+.letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
   
-  .wisteria {
-    color: var(--color-font);
-  }
+.wisteria {
+  color: var(--color-font);
+}
 
 #bar{
   width: 0%;
@@ -140,3 +151,17 @@ label {
   color: red;
   background: #eee;
 }
+
+/* ========================================================== */
+/* MEDIA QUERYS                                               */
+/* ========================================================== */
+
+/*
+@media screen and (min-width: 1920px){
+  .bgColor {
+    align-items: center;
+    height: 100%;
+    margin-bottom: 0%;
+  }
+}
+*/
