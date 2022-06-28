@@ -1,88 +1,114 @@
 {
   "1": [
     {
-      "pregunta": "Cuanto es 2 x 2 + 4",
-      "a": "4",
-      "b": "12",
-      "c": "8",
-      "respuesta": "8"
+      "pregunta": "A qué estaá corresponde la siguiente declaración: 'En esta etapa se analiza la problemática a resolver y las necesidades de los futuros usuarios del programa, convirtiéndolos en requisitos concretos que debe cumplir el programa'. ",
+      "a": "Mantenimiento",
+      "b": "Testing",
+      "c": "Implementacion o despliegue",
+      "d": "Analisis de requisitos",
+      "respuesta": "Analisis de requisitos"
     },
     {
-      "pregunta": "Cuanto es 0 x 2 + 0",
-      "a": "0",
-      "b": "2",
-      "c": "4",
-      "respuesta": "0"
+      "pregunta": "Es cierto que según los expertos, hay que seguir el modelo de desarrollo en cascada a rajatabla porque es muy eficiente.",
+      "a": "Verdadero",
+      "b": "Verdadero, pero en algunos casos se puede no hacerlo",
+      "c": "Falso",
+      "d": "Falso, pero en algunos casos sí hay que hacerlo",
+      "respuesta": "Falso"
     }
   ],
   "2": [
     {
-      "pregunta": "Cuanto es 2 x 0 + 5",
-      "a": "10",
-      "b": "0",
-      "c": "5",
-      "respuesta": "a"
+      "pregunta": "De qué depende el lenguaje ensamblador",
+      "a": "Del software del dispositivo",
+      "b": "Del Hardware del dispositivo",
+      "c": "De ambos",
+      "d": "De ninguno de los dos",
+      "respuesta": "Del Hardware del dispositivo"
     },
     {
-      "pregunta": "Cuanto es 3 x 2 + 0",
-      "a": "4",
-      "b": "12",
-      "c": "6",
-      "respuesta": "6"
+      "pregunta": "Cual de los siguientes NO es un programa informático",
+      "a": "Un archivo de texto",
+      "b": "Una aplicación móvil",
+      "c": "Un programa que registra datos en archivos",
+      "d": "Todas las anteriores",
+      "respuesta": "Un archivo de texto"
     }
   ],
   "3": [
     {
-      "pregunta": "pregunta 3",
-      "a": "respuesta a",
-      "b": "respuesta b",
-      "c": "respuesta correcta",
-      "respuesta": "c"
+      "pregunta": "Cómo se llama la operación de tipo 'Hola*3.0' en Python",
+      "a": "Repetición",
+      "b": "Multiplicación",
+      "c": "Esa operación es inválida",
+      "d": "Duplicación",
+      "respuesta": "Esa operación es inválida"
     }
   ],
   "4": [
     {
-      "pregunta": "pregunta 4",
-      "a": "respuesta a",
-      "b": "respuesta b",
-      "c": "respuesta correcta",
-      "respuesta": "c"
+      "pregunta": "Cuales de los siguientes símbolos sirve para comentar una línea de código en Python",
+      "a": "#",
+      "b": "//",
+      "c": "$",
+      "d": "<--! -->",
+      "respuesta": "#"
+    },
+    {
+      "pregunta": "Cual de los siguientes es un lenguaje de nivel medio",
+      "a": "C++",
+      "b": "Javascript",
+      "c": "Python",
+      "d": "Ninguno de los anteriores",
+      "respuesta": "Ninguno de los anteriores"
     }
   ],
   "5": [
     {
-      "pregunta": "pregunta 5",
-      "a": "respuesta a",
-      "b": "respuesta b",
-      "c": "respuesta correcta",
-      "respuesta": "c"
+      "pregunta": "Que debe hacer siempre un bloque 'if' en Python",
+      "a": "Tener un elif",
+      "b": "Tener un else",
+      "c": "Evaluar una expresión booleana",
+      "d": "Todas las anteriores",
+      "respuesta": "Evaluar una expresión booleana"
     }
   ],
   "6": [
     {
-      "pregunta": "pregunta 6",
-      "a": "respuesta a",
-      "b": "respuesta b",
-      "c": "respuesta correcta",
-      "respuesta": "c"
+      "pregunta": "Para qué se puede utilizar un diccionario en Python",
+      "a": "Almacenar varios atributos de una misma entidad",
+      "b": "Acumular ocurrencias de elementos en una lista",
+      "c": "Ninguna de las anteriores",
+      "d": "Todas las anteriores",
+      "respuesta": "Todas las anteriores"
     }
   ],
   "7": [
     {
-      "pregunta": "pregunta 7",
-      "a": "respuesta a",
-      "b": "respuesta b",
-      "c": "respuesta correcta",
-      "respuesta": "c"
+      "pregunta": "Cuales son las estructuras de control",
+      "a": "Iteración/Selección/Secuencia",
+      "b": "Secuencia/Iteración",
+      "c": "Selección/Iteración/Secuencia/Decisión",
+      "d": "Ninguna de las anteriores",
+      "respuesta": "Iteración/Selección/Secuencia/Decisión"
     }
   ],
   "8": [
     {
-      "pregunta": "pregunta 8",
-      "a": "respuesta a",
-      "b": "respuesta b",
-      "c": "respuesta correcta",
-      "respuesta": "c"
+      "pregunta": "Cual de las siguientes comparaciones retorna TRUE, sí definimos 'tupla=(1,2,3,4) y lista=[1,2,3,4]'",
+      "a": "len(tupla)!=len(lista)",
+      "b": "tupla.clear()==lista.clear()",
+      "c": "tupla[0]==lista[0]",
+      "d": "Todas son correctas",
+      "respuesta": "tupla[0]==lista[0]"
+    },
+    {
+      "pregunta": "Cual de los siguientes son secuencias",
+      "a": "Los strings",
+      "b": "Todos son correctos",
+      "c": "Las listas",
+      "d": "Los diccionarios",
+      "respuesta": "Todos son correctos"
     }
   ]
 }
