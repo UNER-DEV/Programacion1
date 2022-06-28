@@ -3,7 +3,7 @@ var wordArray = [];
 var currentWord = 0;
 const randomColor = "#"+((1<<24)*Math.random()|0).toString(16); 
 
-document.documentElement.style.setProperty('--color-font', randomColor);
+document.documentElement.style.setProperty('--color-random', randomColor);
 
 words[currentWord].style.opacity = 1;
 for (var i = 0; i < words.length; i++) {

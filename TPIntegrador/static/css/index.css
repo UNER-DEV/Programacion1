@@ -1,14 +1,26 @@
-:root{
-    --color-font: 8e44ad;
+:root {
+    --color-bg: #06a5cf;
+    --color-btn-1: #3aaa34;
+    --color-btn-2: rgb(255, 59, 59);
+    --color-font-1: white;
+    --color-font-2: black;
+    --color-font-3: red;
+    --color-font-4: rgb(71, 71, 71);
+    --color-footer: #f39200;
+    --color-logo: #ffd900;
+    --color-random: #8e44ad;
+    --color-shadow: #458a99;
 }
 
-*{
+* {
 margin: 0;
 padding: 0;
 }
 
-html,body {
-  height: 100%;
+body {
+  min-height: 100vh;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .card {
@@ -18,65 +30,64 @@ html,body {
 }
 
 .bgColor{
-  background-color: #53b3c9;
+  background-color: var(--color-bg);
   border-radius: 50px 50px 0px 0px;
-  height: 60rem;
   margin: 1% 10% 0% 10%;
-  padding: 2%;
   width: 80%;
 }
 
+.txt-navbar {
+  color: var(--color-bg);
+}
+
 .shadowFooter {
-  background-color: #f39200;
-  box-shadow: 2px -4px 20px #458a99;
+  background-color: var(--color-footer);
+  box-shadow: 2px -4px 20px var(--color-shadow);
   margin-bottom: 0%;
   position: absolute;
   width: 100%;
   z-index: 9999;
 }
-.altDiv{
-    height: 500px;
-}
 
 #letsPlay{
-  background-color:#ffd900;
+  background-color: var(--color-logo);
   border-radius: 50%;
-  color: white;
+  color: var(--color-font-1);
   font-weight: 500;
   height: 200px;
   width: 200px;
 }
 #letsPlay:hover{
-  background-color: white;
-  border-color: #ffd900;
+  background-color: var(--color-font-1);
+  border-color: var(--color-logo);
   border-width: 10px;
-  color: black;
+  color: var(--color-font-2);
   font-weight: 500;
 }
 
 .btnExit{
-  /*width: 60px;*/
-  background-color:rgb(255, 59, 59);
+  background-color: var(--color-btn-2);
   border-radius: 100%;
-  color: white;
+  color: var(--color-font-1);
   height: 60px;
 }
 .btnExit:hover{
-  background-color: white;
-  border-color: rgb(255, 59, 59);
-  color: black;
+  background-color: var(--color-font-1);
+  border-color: var(--color-btn-2);
+  color: var(--color-font-2);
 }
 
-#btnNext{
-  background-color:#198754;
-  border-radius: 100%;
-  color: white;
-  height: 90px;
+#btnNext, 
+#btnOkUser {
+  background-color: var(--color-btn-1);
+  color: var(--color-font-1);
+  height: 60px;
 }
-#btnNext:hover{
-  background-color: white;
-  border-color:#198754; 
-  color: black;
+#btnNext:hover,
+#btnOkUser:hover {
+  background-color: var(--color-font-1);
+  border-color: var(--color-btn-1);
+  color: var(--color-font-2);
 }
 
 p {
@@ -113,8 +124,17 @@ p {
   transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
   
-.wisteria {
-  color: var(--color-font);
+.name {
+  color: var(--color-random);
+}
+
+.progress {
+  height: 100px;
+}
+.progress-bar {
+  -webkit-text-stroke: 1px var(--color-font-4);
+  font-size: 20px;
+  background-color: var(--color-random);
 }
 
 #bar{
@@ -148,8 +168,8 @@ label {
 }
 #msg {
   margin-top: 10px;
-  color: red;
-  background: #eee;
+  color: var(--color-font-3);
+  background: var(--color-font-1);
 }
 
 /* ========================================================== */
@@ -159,9 +179,8 @@ label {
 /*
 @media screen and (min-width: 1920px){
   .bgColor {
-    align-items: center;
-    height: 100%;
-    margin-bottom: 0%;
+    height: 60rem;
+    padding: 2%;
   }
 }
 */

@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-lg bg-light shadow p-3 mb-5 rounded">
       <div class="container-fluid">
         <form action="{{ url_for('settings_home') }}" method="post">
-          <button type="submit" class="btn btn-light" value="true" name="reloadHome">
+          <button type="submit" class="btn" value="true" name="reloadHome">
             <img src=" {{ url_for('static', filename='/images/logo.png') }} " alt="logo" height="100"/>
           </button>
         </form>
@@ -31,21 +31,21 @@
           <ul class="navbar-nav">
             <form action="{{ url_for('settings_game') }}" method="post">
               <li class="nav-item flipX">
-                <button type="submit" class="btn btn-light fs-2 text-info" value="true" name="reloadGame">
+                <button type="submit" class="btn fs-2 txt-navbar" value="true" name="reloadGame">
                   ¡Vamos a jugar!
                 </button>
               </li>
             </form>
             <form action="{{ url_for('queryScores') }}" method="post">
               <li class="nav-item flipX">
-                <button type="submit" class="btn btn-light fs-2 text-info" value="true" name="queryScores">
+                <button type="submit" class="btn fs-2 txt-navbar" value="true" name="queryScores">
                   Consultas
                 </button>
               </li>
             </form>
             <form action="{{ url_for('addQuestion') }}">
               <li class="nav-item flipX">
-                <button type="submit" class="btn btn-light fs-2 text-info" value="true" name="addQuestion">
+                <button type="submit" class="btn btn-light fs-2 txt-navbar" value="true" name="addQuestion">
                   Añadir pregunta
                 </button>
               </li>
@@ -59,21 +59,23 @@
         </form>
       </div>
     </nav>
+    
     {% block body %} 
     {% endblock %}
+
+    <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 shadowFooter">
+      <ul class="nav col-lg-12 justify-content-around w-75">
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white px-3 fs-4">Nosotres</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white px-3 fs-4">Repositorio</a>
+        </li>
+      </ul>
+    </footer>
+
     <script src="../static/js/bootstrap.min.js"></script>
     <script src="../static/js/bootstrap.bundle.js"></script>
   </body>
-
-  <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 shadowFooter">
-    <ul class="nav col-lg-12 justify-content-around w-75">
-      <li class="nav-item">
-        <a href="#" class="nav-link text-white px-3 fs-4">Nosotres</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link text-white px-3 fs-4">Repositorio</a>
-      </li>
-    </ul>
-  </footer>
 
 </html>

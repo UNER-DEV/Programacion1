@@ -5,23 +5,23 @@
     <script src="{{ url_for('static', filename='/js/rotatingText.js') }}" defer></script>
 {%endblock%}
 {% block body %}
-<div class="container-fluid mb-5 altDiv">
+<div class="container-fluid mb-5">
     <div class="col mb-5">
-    <div class="row text-center justify-content-center">
-        <img class="index_img" src=" {{ url_for('static', filename='/images/banner.png') }} " alt="logo"  >
+        <div class="row text-center justify-content-center">
+            <img class="index_img" src=" {{ url_for('static', filename='/images/banner.png') }} " alt="logo"  >
+        </div>
+        <div class="row row-cols-2 justify-content-around align-items-center mt-4 text-center">
+            <h1>
+                <div class="text">
+                    <p>Hola</p>
+                    <p>
+                        <span class="word name">{{user}}</span>
+                    </p>
+                </div>    
+            </h1>
+            <form action="{{ url_for('handle_data') }}" method="post">
+            <button type="submit" class="btn btn-light fs-2 rounded-circle" id="letsPlay">VAMOS A JUGAR</button></form>
+        </div>
     </div>
-    <div class="row row-cols-2 justify-content-around align-items-center mt-4 text-center">
-        <h1>
-            <div class="text">
-                <p>Hola</p>
-                <p>
-                    <span class="word wisteria">{{user}}</span>
-                </p>
-            </div>    
-        </h1>
-        <form action="{{ url_for('handle_data') }}" method="post">
-        <button type="submit" class="btn btn-light fs-2 rounded-circle" id="letsPlay">VAMOS A JUGAR</button></form>
-    </div>
-</div>
 </div> 
 {% endblock %}

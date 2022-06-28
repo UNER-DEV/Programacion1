@@ -1,3 +1,6 @@
+const randomColor = "#"+((1<<24)*Math.random()|0).toString(16); 
+document.documentElement.style.setProperty('--color-random', randomColor);
+
 $(function() {
     var min = 0,
         max = 8,
@@ -38,7 +41,7 @@ $(function() {
             return;
           } else {
             $("#in, #de").prop("Desactivado", false).css("opacity", 1);
-            $("#bar").text(result + "%").css('width', result + "%");
+            $("#bar").text("ESCALÓN " + step + " / 8").css('width', result + "%");
           }
           $msg.hide();
         } else {
