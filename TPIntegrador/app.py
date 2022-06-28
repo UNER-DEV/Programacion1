@@ -19,31 +19,78 @@ step = 1
 user = ''
 start = ''
 end = ''
+life = 3
 score = 0
 datos = ["Usuario", "Puntaje", "Tiempo_Inicio", "Tiempo_Fin"]
-file_name = 'savedScores.json'
+file_name = 'db\savedScores.json'
 
 # ========================================================== #
 #  FUNCIONES                                                 #
 # ========================================================== #
+def refresh_all():
+    global step 
+    global user 
+    global start 
+    global end 
+    global life 
+    global score 
+    step = 1
+    user = ''
+    start = ''
+    end = ''
+    life = 3
+    score = 0
+
+def refresh_game():
+    global step 
+    global start 
+    global life 
+    global score 
+    step = 1
+    start = datetime.now().strftime("%H:%M:%S %d/%m/%Y")
+    life = 3
+    score = 0
+
 def pregEscalones(data):
     global step
-    if step <=8:
+    if step <= 8:
         escalon = data[str(step)]
-        choice = escalon[rdm.randint(0, len(data[str(step)])-1 )]
+        choice = escalon[rdm.randint(0, len(data[str(step)]) - 1 )]
     return choice
 
-def settingsGame():
-    reloadGame=request.form('reloadGame')
-    if(reloadGame):
-        global step
-        step = 1
-        return render_template('question.html', data=pregEscalones(dataLocal),step=step, user=user )
-
+def saveScore():
+    global user
+    global score
+    global life
+    global start
+    global end
+    global file_name 
+    print(start)
+    date = datetime.now()
+    end = date.strftime("%H:%M:%S %d/%m/%Y")
+    entry = {datos[0]: user, datos[1]: score + life, datos[2]: start, datos[3]: end,}
+    data = []
+    try:
+        with open(file_name, "r") as file:
+            data = json.load(file)
+    except json.JSONDecodeError:
+        print("JSON Vacio")
+    except FileNotFoundError:
+        print("No existe el JSON")
+    data.append(entry)
+    with open(file_name, "w") as file:
+        json.dump(data, file, indent = 4)
 
 # ========================================================== #
 #  RUTAS Y RENDERIZADO                                       #
 # ========================================================== #
+
+def settingsGame():
+    reloadGame = request.form('reloadGame')
+    if(reloadGame):
+        refresh_game()
+        return render_template('question.html', data = pregEscalones(dataLocal), step = step, user = user, life = life)
+
 @app.route('/')
 def index():
     return render_template('index.html') #Flask busca, por defecto la ruta de las plantillas.
@@ -51,25 +98,22 @@ def index():
 @app.route('/home', methods=['POST'])
 def handle_user():
     global user
-    user =  request.form['inputUser']
-    if(len(user)>10):
-        return render_template('index.html' , error= "El usuario es muy largo. Ingrese 10 carácteres como máximo.")
-    elif(user!=''):
-        return render_template('home.html',  user=user )
     global start
+    user =  request.form['inputUser']
+    if(len(user) > 10):
+        return render_template('index.html', error= "El usuario es muy largo. Ingrese 10 carácteres como máximo.")
+    elif(user != ''):
+        return render_template('home.html',  user = user )
     date = datetime.now()
     start = date.strftime("%H:%M:%S %d/%m/%Y")
-    return render_template('index.html' , error= "No se ingresó un usuario")
+    return render_template('index.html', error= "No se ingresó un usuario")
 
 @app.route('/exit', methods=['POST'])
 def exit():
-    exit=request.form['exit']
+    exit = request.form['exit']
     if(exit):
-        global step
-        global user
-        user=''
-        step=1
-        return render_template('index.html',  user=user )
+        refresh_all()
+        return render_template('index.html')
 
 @app.route('/añadirPregunta')
 def addQuestion():
@@ -84,59 +128,56 @@ def queryScores():
             data = json.load(file)
     except:
         print("JSON Vacio")
-    return render_template('queryGame.html', data=data, len = len(data))
+    return render_template('queryGame.html', data = data, len = len(data))
 
 @app.route('/resultado')
 def finalResult():
-    date = datetime.now()
-    global end
-    global start
-    end = date.strftime("%H:%M:%S %d/%m/%Y")
-    entry ={datos[0]: user, datos[1]: score, datos[2]: start, datos[3]: end, }
-    data = []
-    try:
-        with open(file_name, "r") as file:
-            data = json.load(file)
-    except json.JSONDecodeError:
-        print("JSON Vacio")
-    data.append(entry)
-    with open(file_name, "w") as file:
-        json.dump(data, file, indent = 4)
+    saveScore()
     return render_template('result.html')
 
 @app.route('/preguntas', methods=['POST'])
 def handle_data():
     global step
+    global user
+    global life
+    global score
     try:
         value = request.form['option']
         correcto = request.form['correcto']
-        if(value==correcto):
+        if(value == correcto):
+            score += 1
             step = int(request.form['btnNext']) + 1
-            if(step<=8):
-                return render_template('question.html', data=pregEscalones(dataLocal),step=str(step),user=user )
+            if(step <= 8):
+                return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life)
             return render_template('result.html')
         else:
-            return render_template('question.html', data=pregEscalones(dataLocal),step=str(step),user=user )
+            print(life)
+            if(life > 1):
+                life -= 1
+                return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life)
+            else:
+                return finalResult()
     except:
         print('Saca la mano de ahi carajo')
-        return render_template('question.html', data=pregEscalones(dataLocal),step=str(step),user=user )
+        return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life)
 
 @app.route('/reload', methods=['POST'])
 def settings_game():
-    reloadGame=request.form['reloadGame']
+    reloadGame = request.form['reloadGame']
     if(reloadGame):
+        refresh_game()
         global step
-        step = 1
-        return render_template('question.html', data=pregEscalones(dataLocal),step=step,user=user )
+        global user
+        return render_template('question.html', data = pregEscalones(dataLocal), step = step, user = user, life = life)
 
 @app.route('/reloadGames', methods=['POST'])
 def settings_home():
-    reloadHome=request.form['reloadHome']    
+    reloadHome = request.form['reloadHome']    
     if(reloadHome):
-        global step
-        step = 1
-        if(user!=''):
-            return render_template('home.html' , user=user)
+        refresh_game()
+        global user
+        if(user != ''):
+            return render_template('home.html', user = user)
         return render_template('index.html')
 
 

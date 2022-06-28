@@ -9,6 +9,7 @@
 
 <div class="container-fluid bgColor">
   <h1 id="titleQuestion" class="row row-cols-2 text-center justify-content-center py-3">ESCALÓN {{step}}</h1>
+  <h3 id="titleQuestion" class="justify-content-center text-center">VIDAS RESTANTES: {%for i in range(0, life)%}<i class="fas fa-heart ps-3 text-danger fa-beat animated"> </i>{%endfor%}{%for i in range(0, 3 - life)%}<i class="far fa-heart ps-3 text-secondary fa-beat animated"> </i>{%endfor%}</h3>
   <input type="hidden" id="step" value="{{step}}" />
   <div class="container" >
     <div class="progress" >

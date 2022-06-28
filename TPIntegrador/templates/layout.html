@@ -8,10 +8,11 @@
     <title>{% block title %} {% endblock %}</title>
     {% block plugins %}
     {% endblock %}
+    <script src="../static/js/jquery-3.5.1.js"></script>
     <link rel="shortcut icon" href="{{ url_for('static', filename='/images/favicon-32x32.png') }}"/>
-    <link href="{{ url_for('static', filename='/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='/css/bootstrap.css') }}" rel="stylesheet" defer>
     <link href="../static/css/all.css" rel="stylesheet" defer/>
-    <link href="{{ url_for('static', filename='/css/font-awesome.css') }}" rel="stylesheet" defer>
+    <link href="{{ url_for('static', filename='/css/font-awesome-animation.css') }}" rel="stylesheet" defer>
     <link href="{{ url_for('static', filename='/css/index.css') }}" rel="stylesheet"/>
   </head>
 
