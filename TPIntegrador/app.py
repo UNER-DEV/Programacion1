@@ -67,10 +67,9 @@ def saveScore():
     global start
     global end
     global file_name 
-    print(start)
     date = datetime.now()
     end = date.strftime("%H:%M:%S %d/%m/%Y")
-    entry = {datos[0]: user, datos[1]: score + life, datos[2]: start, datos[3]: end,}
+    entry = {datos[0]: user, datos[1]: score + (life-1), datos[2]: start, datos[3]: end,}
     data = []
     try:
         with open(file_name, "r") as file:
@@ -105,9 +104,9 @@ def handle_user():
     if(len(user) > 10):
         return render_template('index.html', error= "El usuario es muy largo. Ingrese 10 carácteres como máximo.")
     elif(user != ''):
+        date = datetime.now()
+        start = date.strftime("%H:%M:%S %d/%m/%Y")
         return render_template('home.html',  user = user )
-    date = datetime.now()
-    start = date.strftime("%H:%M:%S %d/%m/%Y")
     return render_template('index.html', error= "No se ingresó un usuario")
 
 @app.route('/exit', methods=['POST'])
@@ -143,7 +142,6 @@ def addQuestion():
 @app.route('/consultaPuntajes', methods=['POST'])
 def queryScores():
     data = []
-    print(file_name)
     try:
         with open(file_name, "r") as file:
             data = json.load(file)
@@ -170,7 +168,7 @@ def handle_data():
             step = int(request.form['btnNext']) + 1
             if(step <= 8):
                 return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life)
-            return render_template('result.html')
+            return finalResult()
         else:
             print(life)
             if(life > 1):
@@ -179,7 +177,7 @@ def handle_data():
             else:
                 return finalResult()
     except HTTPException:
-        print('Saca la mano de ahi carajo')
+        print('Todo es bronca y dolor')
         return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life)
 
 @app.route('/reload', methods=['POST'])
