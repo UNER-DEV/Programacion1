@@ -5,7 +5,14 @@
 <div class="container">
     <div class="col col-6 align-items-center">
         <div class="row">
+            {%- if life >1 -%}
             <h1>wiii finalizaste</h1>
+            <h1>{{life}}</h1>
+            {% endif %}
+            {%- if life==1 -%}
+            <h1>¡Oh has perdido!</h1>
+            <h3>Tienes {{life-1}} vidas <i class="fa-light fa-face-sad-cry"></i></h3>
+            {% endif %}
         </div>
     </div>
 </div>

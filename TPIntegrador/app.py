@@ -152,7 +152,7 @@ def queryScores():
 @app.route('/resultado')
 def finalResult():
     saveScore()
-    return render_template('result.html')
+    return render_template('result.html', life = life)
 
 @app.route('/preguntas', methods=['POST'])
 def handle_data():
