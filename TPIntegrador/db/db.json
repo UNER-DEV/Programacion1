@@ -1,7 +1,7 @@
 {
   "1": [
     {
-      "pregunta": "A qué estaá corresponde la siguiente declaración: 'En esta etapa se analiza la problemática a resolver y las necesidades de los futuros usuarios del programa, convirtiéndolos en requisitos concretos que debe cumplir el programa'. ",
+      "pregunta": "A que etapa corresponde la siguiente declaracion: 'En esta etapa se analiza la problematica a resolver y las necesidades de los futuros usuarios del programa, convirtiendolos en requisitos concretos que debe cumplir el programa'. ",
       "a": "Mantenimiento",
       "b": "Testing",
       "c": "Implementacion o despliegue",
@@ -9,17 +9,17 @@
       "respuesta": "Analisis de requisitos"
     },
     {
-      "pregunta": "Es cierto que según los expertos, hay que seguir el modelo de desarrollo en cascada a rajatabla porque es muy eficiente.",
+      "pregunta": "Es cierto que segun los expertos, hay que seguir el modelo de desarrollo en cascada a rajatabla porque es muy eficiente.",
       "a": "Verdadero",
       "b": "Verdadero, pero en algunos casos se puede no hacerlo",
       "c": "Falso",
-      "d": "Falso, pero en algunos casos sí hay que hacerlo",
+      "d": "Falso, pero en algunos casos si hay que hacerlo",
       "respuesta": "Falso"
     }
   ],
   "2": [
     {
-      "pregunta": "De qué depende el lenguaje ensamblador",
+      "pregunta": "De que depende el lenguaje ensamblador",
       "a": "Del software del dispositivo",
       "b": "Del Hardware del dispositivo",
       "c": "De ambos",
@@ -27,9 +27,9 @@
       "respuesta": "Del Hardware del dispositivo"
     },
     {
-      "pregunta": "Cual de los siguientes NO es un programa informático",
+      "pregunta": "Cual de los siguientes NO es un programa informatico",
       "a": "Un archivo de texto",
-      "b": "Una aplicación móvil",
+      "b": "Una aplicacion movil",
       "c": "Un programa que registra datos en archivos",
       "d": "Todas las anteriores",
       "respuesta": "Un archivo de texto"
@@ -37,17 +37,17 @@
   ],
   "3": [
     {
-      "pregunta": "Cómo se llama la operación de tipo 'Hola*3.0' en Python",
-      "a": "Repetición",
-      "b": "Multiplicación",
-      "c": "Esa operación es inválida",
-      "d": "Duplicación",
-      "respuesta": "Esa operación es inválida"
+      "pregunta": "Como se llama la operacion de tipo 'Hola*3.0' en Python",
+      "a": "Repeticion",
+      "b": "Multiplicacion",
+      "c": "Esa operacion es invalida",
+      "d": "Duplicacion",
+      "respuesta": "Esa operacion es invalida"
     }
   ],
   "4": [
     {
-      "pregunta": "Cuales de los siguientes símbolos sirve para comentar una línea de código en Python",
+      "pregunta": "Cuales de los siguientes simbolos sirve para comentar una linea de codigo en Python",
       "a": "#",
       "b": "//",
       "c": "$",
@@ -68,14 +68,14 @@
       "pregunta": "Que debe hacer siempre un bloque 'if' en Python",
       "a": "Tener un elif",
       "b": "Tener un else",
-      "c": "Evaluar una expresión booleana",
+      "c": "Evaluar una expresion booleana",
       "d": "Todas las anteriores",
-      "respuesta": "Evaluar una expresión booleana"
+      "respuesta": "Evaluar una expresion booleana"
     }
   ],
   "6": [
     {
-      "pregunta": "Para qué se puede utilizar un diccionario en Python",
+      "pregunta": "Para que se puede utilizar un diccionario en Python",
       "a": "Almacenar varios atributos de una misma entidad",
       "b": "Acumular ocurrencias de elementos en una lista",
       "c": "Ninguna de las anteriores",
@@ -86,16 +86,16 @@
   "7": [
     {
       "pregunta": "Cuales son las estructuras de control",
-      "a": "Iteración/Selección/Secuencia",
-      "b": "Secuencia/Iteración",
-      "c": "Selección/Iteración/Secuencia/Decisión",
+      "a": "Iteracion/Seleccion/Secuencia",
+      "b": "Secuencia/Iteracion",
+      "c": "Seleccion/Iteracion/Secuencia/Decision",
       "d": "Ninguna de las anteriores",
-      "respuesta": "Iteración/Selección/Secuencia/Decisión"
+      "respuesta": "Iteracion/Seleccion/Secuencia/Decision"
     }
   ],
   "8": [
     {
-      "pregunta": "Cual de las siguientes comparaciones retorna TRUE, sí definimos 'tupla=(1,2,3,4) y lista=[1,2,3,4]'",
+      "pregunta": "Cual de las siguientes comparaciones retorna TRUE, si definimos 'tupla=(1,2,3,4) y lista=[1,2,3,4]'",
       "a": "len(tupla)!=len(lista)",
       "b": "tupla.clear()==lista.clear()",
       "c": "tupla[0]==lista[0]",

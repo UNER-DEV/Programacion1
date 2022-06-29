@@ -115,8 +115,27 @@ def exit():
         refresh_all()
         return render_template('index.html')
 
-@app.route('/añadirPregunta')
+@app.route('/añadirPregunta', methods=['POST'])
 def addQuestion():
+    try:
+        question=request.form['questionInput']
+        optionA=request.form['questionOptionA'] 
+        optionB=request.form['questionOptionB'] 
+        optionC=request.form['questionOptionC'] 
+        optionD=request.form['questionOptionD']
+        respCorrecta=request.form[str(request.form['respuestaSelector'])]  
+        escalon=request.form['escalonSelector'] 
+        entry={pregunta[0]: question, pregunta[1]: optionA, pregunta[2]: optionB, pregunta[3]: optionC,pregunta[4]: optionD,pregunta[5]: respCorrecta }
+        try:
+            with open("db/db.json", "r") as file:
+                data = json.load(file)
+        except json.JSONDecodeError:
+            print("JSON Vacio")
+        data[escalon].append(entry)
+        with open("db/db.json", "w") as file:
+            json.dump(data, file, indent = 4)   
+    except:
+        return render_template('addQuestion.html', error="*Recuerde que debe llenar todos los campos para continuar")
     return render_template('addQuestion.html')
 
 @app.route('/consultaPuntajes', methods=['POST'])

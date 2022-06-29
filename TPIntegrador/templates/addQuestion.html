@@ -2,33 +2,42 @@
 {%block title%}añadir preguntas{%endblock%}
 
 {%block body%}
-
-<div class="container-fluid">
-    <form>
-        <div class="mb-3">
+<div class="container w-50">
+    <form class="row row-cols-1 justify-content-center" action="{{ url_for('addQuestion') }}" method="POST">
+        <div class="col mb-3 ">
             <label for="questionInput" class="form-label">Ingrese la pregunta a añadir</label>
-            <input type="text" class="form-control" id="questionInput" placeholder="¿ Qué lenguajes más comunes son de alto nivel?">
+            <input type="text" class="form-control" id="questionInput" name="questionInput" placeholder="¿ Qué lenguajes más comunes son de alto nivel?">
           </div>
-          <div class="mb-3">
+          <div class="col col-sm-12  mb-3">
             <label for="questionOptionA" class="form-label">Opción A:</label>
-            <input type="text" class="form-control" id="questionOptionA">
+            <input type="text" class="form-control" id="questionOptionA" name="questionOptionA" placeholder="...">
         </div>
-        <div class="mb-3">
+        <div class="col col-sm-12 mb-3">
             <label for="questionOptionB" class="form-label">Opción B:</label>
-            <input type="text" class="form-control" id="questionOptionB">
+            <input type="text" class="form-control" id="questionOptionB" name="questionOptionB" placeholder="...">
         </div>
-        <div class="mb-3">
+        <div class="col mb-3">
             <label for="questionOptionC" class="form-label">Opción C:</label>
-            <input type="text" class="form-control" id="questionOptionC">
+            <input type="text" class="form-control" id="questionOptionC" name="questionOptionC" placeholder="...">
         </div>
-        <div class="mb-3">
+        <div class="col mb-3">
             <label for="questionOptionD" class="form-label">Opción D:</label>
-            <input type="text" class="form-control" id="questionOptionD">
+            <input type="text" class="form-control" id="questionOptionD" name="questionOptionD" placeholder="...">
         </div>
+        <div class="col mb-3">
+            <label for="respuestaSelector" class="form-label">Respuesta correcta:</label>
+            <select class="form-select" aria-label="Default_select" id="respuestaSelector" name="respuestaSelector" placeholder="...">
+                <option selected disabled>Seleccione...</option>
+                <option value="questionOptionA">A</option>
+                <option value="questionOptionB">B</option>
+                <option value="questionOptionC">C</option>
+                <option value="questionOptionD">D</option>
+              </select>
+            </div>
 
-        <div class="mb-3">
+        <div class="col mb-3">
         <label for="escalonSelector" class="form-label">Escalón a añadir la pregunta:</label>
-        <select class="form-select" aria-label="Default_select" id="escalonSelector">
+        <select class="form-select" aria-label="Default_select" id="escalonSelector" name="escalonSelector">
             <option selected disabled>Seleccione...</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -40,7 +49,16 @@
             <option value="8">8</option>
           </select>
         </div>
-
+        <p class="text-danger mb-4 fs-6">{{error}}</p>
+        <div class="col mb-3">
+            <button
+              type="submit"
+              class="btn btn-info"
+              id="btnAddQuestion"
+              name="btnAddQuestion"
+            >AÑADIR PREGUNTA
+            </button>
+          </div>
     </form>
 </div>
 

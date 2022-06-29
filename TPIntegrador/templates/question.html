@@ -3,7 +3,8 @@
 {%block plugins%}
   <script src="../static/js/jquery-3.5.1.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <script src="../static/js/progreesBar.js" defer></script>    
+  <script src="../static/js/progreesBar.js" defer></script> 
+  <script src="../static/js/checkButtons.js" defer></script>    
 {%endblock%}
 {% block body %}
 
@@ -22,59 +23,72 @@
       </div>
     </strong>
   <form class="row row-cols-2 text-center justify-content-center" action="{{ url_for('handle_data') }}" method="POST">
-    <div class="card" style="width: 30em">
+    <div class="card" style="width: 40em" id="cardGroup">
     <div class="card-body mb-4">
-      <h2 class="card-title mt-4">&iquest;{{ data['pregunta'] }}?</h2>
+      <h4 class="card-title mt-4">&iquest;{{ data['pregunta'] }}?</h4>
     </div>
 
-    <ul class="list-group list-group-flush">
+    <div class="form-check">
+      <input
+        class="btn-check "
+        type="radio"
+        name="option"
+        id="a"
+        value="{{data['a']}}"
+        autocomplete="off"
+      />
+      <label class="btn btnQuestionCheck fs-3 text-white fw-bold" onclick="onHandleClick(this)" for="a">
+        {{data['a']}}
+      </label>
+    </div>
 
-      <li class="list-group-item">
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="option"
-            id="a"
-            value="{{data['a']}}"
-          />
-          <label class="form-check-label fs-3 wisteria fw-bold" for="a">
-            {{data['a']}}
-          </label>
-        </div>
-      </li>
+  
+    
+      <div class="form-check">
+      <input
+        class="btn-check"
+        type="radio"
+        name="option"
+        value="{{data['b']}}"
+        id="b"
+        autocomplete="off"
+      />
+      <label class="btn btnQuestionCheck fs-3 text-white fw-bold" onclick="onHandleClick(this)" for="b">
+        {{data['b']}}
+      </label>
+    </div>
 
-      <li class="list-group-item">
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="option"
-            value="{{data['b']}}"
-            id="b"
-          />
-          <label class="form-check-label fs-3 wisteria fw-bold" for="b">
-            {{data['b']}}
-          </label>
-        </div>
-      </li>
 
-      <li class="list-group-item">
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="option"
-            value="{{data['c']}}"
-            id="c"
-          />
-          <label class="form-check-label fs-3 wisteria fw-bold" for="c">
-            {{data['c']}}
-          </label>
-        </div>
-      </li>
+    <div class="form-check">
+      <input
+        class="btn-check "
+        type="radio"
+        name="option"
+        value="{{data['c']}}"
+        id="c"
+        autocomplete="off"
+      />
+      <label class="btn btnQuestionCheck fs-3 text-white fw-bold" onclick="onHandleClick(this)" for="c">
+        {{data['c']}}
+      </label>
+    </div> 
+ 
 
-    </ul>
+  
+    <div class="form-check">
+      <input
+        class="btn-check"
+        type="radio"
+        name="option"
+        value="{{data['d']}}"
+        id="c"
+        autocomplete="off"
+      />
+      <label class="btn btnQuestionCheck fs-3 text-white fw-bold" onclick="onHandleClick(this)" for="d">
+        {{data['d']}}
+      </label>
+    </div>
+  
 
     <input class="d-none" name="correcto" value="{{data['respuesta']}}"></input>
 
