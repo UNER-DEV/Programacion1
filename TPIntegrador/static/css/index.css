@@ -2,6 +2,7 @@
     --color-bg: #06a5cf;
     --color-btn-1: #3aaa34;
     --color-btn-2: rgb(255, 59, 59);
+    --color-btn-3:#124368;
     --color-font-1: white;
     --color-font-2: black;
     --color-font-3: red;
@@ -24,9 +25,13 @@ body {
 }
 
 .card {
-  height: 80%;
-  margin: 10%;
+  margin: 2% 5% 5% 5%;
   width: 30rem;
+}
+
+.cardQuestion {
+  margin: 2% 5% 5% 5%;
+  width: 50rem;
 }
 
 .bgColor{
@@ -129,8 +134,12 @@ p {
 }
 
 .progress {
-  height: 100px;
+background-color: rgb(111, 200, 210);
+height: 4rem;
+padding:0px;
+width: 80%;
 }
+
 .progress-bar {
   -webkit-text-stroke: 1px var(--color-font-4);
   font-size: 20px;
@@ -138,8 +147,16 @@ p {
 }
 
 #bar{
-  width: 0%;
+font-size: 30px;
+-webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color: rgb(72, 72, 72);
 }
+
+#titleQuestion{
+  color: #ef9000;
+  font-weight: 700;
+  text-shadow: 2px 2px #2b2b2b;
+  }
 
 #navbarNav{
   font-family: 'Lucida Sans Regular', sans-serif;
@@ -173,37 +190,23 @@ label {
 }
 
 .btnQuestionCheck{
-  background-color: #124368;
+  background-color: var(--color-font-4);
   width: 75%;
   margin-bottom: 2%;
   border-radius: 20px;
   box-shadow: 5px 5px 10px rgb(134, 134, 134);
 }
+
 .btnQuestionCheck:hover{
   background-color: var(--color-shadow);
 }
 
-.active{
-  background-color:var(--color-btn-1);
+ 
+#lives{
+  font-size: 1.5rem;
+  color: var(--color-footer);
+  text-shadow: 1px 1px #2b2b2b;
 }
-
-/* .progress{
-background-color: rgb(111, 200, 210);
-height: 4rem;
-padding:0px;
-} */
-
-/* #bar{
-font-size: 30px;
--webkit-text-stroke-width: 1px;
--webkit-text-stroke-color: rgb(72, 72, 72);
-} */
-
-/* #titleQuestion{
-color: #ef9000;
-font-weight: 700;
-text-shadow: 2px 2px #2b2b2b;
-} */
 
 
 
@@ -217,7 +220,7 @@ text-shadow: 2px 2px #2b2b2b;
     height: 60rem;
     padding: 2%;
   }
-}
+}*/
 
 @media (max-width: 1380px){
   #containerBar{
@@ -230,8 +233,15 @@ text-shadow: 2px 2px #2b2b2b;
     -webkit-text-stroke-width: 0.5px;
     }
   #titleQuestion{
-    justify-self: center
+    justify-self: center;
+    font-size: 1.2rem !important; 
   }
+  
+  .card-title,
+  .fs-3,
+  #lives {
+  font-size: 1rem !important; 
+}
 }
 
-*/
+

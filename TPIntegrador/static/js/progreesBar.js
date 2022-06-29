@@ -41,7 +41,7 @@ $(function() {
             return;
           } else {
             $("#in, #de").prop("Desactivado", false).css("opacity", 1);
-            $("#bar").text("ESCALÓN " + step + " / 8").css('width', result + "%");
+            $("#bar").text(step + " / 8").css('width', result + "%");
           }
           $msg.hide();
         } else {

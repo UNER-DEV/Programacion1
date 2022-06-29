@@ -2,6 +2,7 @@
 #  IMPORTS                                                   #
 # ========================================================== #
 from flask import Flask, render_template,request
+from werkzeug.exceptions import HTTPException
 import json
 import os
 import random as rdm
@@ -23,6 +24,7 @@ life = 3
 score = 0
 datos = ["Usuario", "Puntaje", "Tiempo_Inicio", "Tiempo_Fin"]
 file_name = 'db\savedScores.json'
+pregunta = ["pregunta","a","b","c","d","respuesta"]
 
 # ========================================================== #
 #  FUNCIONES                                                 #
@@ -176,7 +178,7 @@ def handle_data():
                 return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life)
             else:
                 return finalResult()
-    except:
+    except HTTPException:
         print('Saca la mano de ahi carajo')
         return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life)
 
