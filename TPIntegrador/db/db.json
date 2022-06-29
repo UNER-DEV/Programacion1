@@ -15,6 +15,14 @@
       "c": "Falso",
       "d": "Falso, pero en algunos casos si hay que hacerlo",
       "respuesta": "Falso"
+    },
+    {
+      "pregunta": "De que constan los lenguajes de programacion, además de un lexico y una sintaxis",
+      "a": "Coherencia",
+      "b": "Verbos",
+      "c": "Semantica",
+      "d": "Clasificacion por nivel",
+      "respuesta": "Semantica"
     }
   ],
   "2": [
@@ -33,6 +41,22 @@
       "c": "Un programa que registra datos en archivos",
       "d": "Todas las anteriores",
       "respuesta": "Un archivo de texto"
+    },
+    {
+      "pregunta": "Cual de estos lenguajes de programacion NO es de alto nivel",
+      "a": "C",
+      "b": "Python",
+      "c": "Assembler",
+      "d": "Java",
+      "respuesta": "Assembler"
+    },
+    {
+      "pregunta": "Cual de los siguientes es un lenguaje de nivel medio",
+      "a": "C++",
+      "b": "Javascript",
+      "c": "Python",
+      "d": "Ninguno de los anteriores",
+      "respuesta": "Ninguno de los anteriores"
     }
   ],
   "3": [
@@ -43,6 +67,22 @@
       "c": "Esa operacion es invalida",
       "d": "Duplicacion",
       "respuesta": "Esa operacion es invalida"
+    },
+    {
+      "pregunta": "Es Python un lenguaje de alto nivel, de proposito general, multiparadigma principalmente imperativo ",
+      "a": "No, es un lenguaje de bajo nivel.",
+      "b": "Si, y también es orientado a objetos y funcional",
+      "c": "No, no es principalmente imperativo",
+      "d": "Si, pero no es multiparadigma",
+      "respuesta": "Si, y también es orientado a objetos y funcional"
+    },
+    {
+      "pregunta": "Cual de las siguientes opciones con Python, devuelve como resultado esta operación '6 ** 2 + 6' ",
+      "a": "6",
+      "b": "18",
+      "c": "42",
+      "d": "Error",
+      "respuesta": "42"
     }
   ],
   "4": [
@@ -55,13 +95,20 @@
       "respuesta": "#"
     },
     {
-      "pregunta": "Cual de los siguientes es un lenguaje de nivel medio",
-      "a": "C++",
-      "b": "Javascript",
-      "c": "Python",
-      "d": "Ninguno de los anteriores",
-      "respuesta": "Ninguno de los anteriores"
-    }
+      "pregunta": "Cual de las siguientes opciones, es un punto debil en Python",
+      "a": "Comunidad",
+      "b": "Lentitud",
+      "c": "El programador debe conocer mucho sobre el lenguaje para usarlo",
+      "d": "Todas son correctas",
+      "respuesta": "Lentitud"
+    },{
+      "pregunta": "Cual de estas opciones contiene una fecha incorrecta, de la version de Phyton",
+      "a": "Versión 0.9 (1988)",
+      "b": "Versión 3.10.2 (13 de Enero de 2022)",
+      "c": "Versión 1.6 (2000)",
+      "d": "Versión 3.9 (2020)",
+      "respuesta": "Versión 0.9 (1988)"
+  }
   ],
   "5": [
     {
@@ -71,7 +118,15 @@
       "c": "Evaluar una expresion booleana",
       "d": "Todas las anteriores",
       "respuesta": "Evaluar una expresion booleana"
-    }
+    },
+    {
+      "pregunta": "Cual de las siguientes operaciones es correcta, dada la siguiente variable: letras = 'abcdefghijklmnopqrstuvwxyz'",
+      "a": "letras[1] → 'a'",
+      "b": "Ninguna",
+      "c": "letras[7] → 'g'",
+      "d": "letras[-25] → 'b'",
+      "respuesta": "letras[-25] → 'b'"
+  }
   ],
   "6": [
     {
@@ -81,7 +136,15 @@
       "c": "Ninguna de las anteriores",
       "d": "Todas las anteriores",
       "respuesta": "Todas las anteriores"
-    }
+    },
+    {
+      "pregunta": "Es cierto que en el contexto de programación, una función es un nombre que se le asigna a una secuencia, de sentencias, que llevan a cabo un computo",
+      "a": "Si, pero llevan a cabo subtareas",
+      "b": "No, se le asigna a una secuencia de sentencias de CODIGO",
+      "c": "Si, es Verdadero",
+      "d": "No, es Falso",
+      "respuesta": "Si, es Verdadero"
+  }
   ],
   "7": [
     {
@@ -91,7 +154,14 @@
       "c": "Seleccion/Iteracion/Secuencia/Decision",
       "d": "Ninguna de las anteriores",
       "respuesta": "Seleccion/Iteracion/Secuencia/Decision"
-    }
+    }, {
+      "pregunta": "Puede una función solo retornar un valor, en términos estrictos",
+      "a": "Verdadero",
+      "b": "Falso",
+      "c": "No, una funcion no retorna nada",
+      "d": "Verdadero, pero si el valor es una tupla, el efecto es el mismo que retornar multiples valores",
+      "respuesta": "Verdadero, pero si el valor es una tupla, el efecto es el mismo que retornar multiples valores"
+  }
   ],
   "8": [
     {
