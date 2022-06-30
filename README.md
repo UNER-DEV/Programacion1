@@ -6,5 +6,5 @@
 - María Emilia Walter
 - Sebastian Ignacio Centurion
 
-## Búsquenos en Linkedin:
+## PERFILES en Linkedin:
 - https://linktr.ee/unerdevprogramacion1
