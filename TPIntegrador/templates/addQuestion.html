@@ -1,23 +1,29 @@
-{% extends './layout.html' %}
-{%block title%}añadir preguntas{%endblock%}
+{% extends './layout.html' %} {%block title%}añadir preguntas{%endblock%}
 {%block plugins%}
-  <script src="../static/js/checkButtons.js" defer></script>    
-{%endblock%}
-
-{%block body%}
-
-{%+ if modal == 0 %}
-<div class="modal fade" id="modalAdd" tabindex="-1" aria-labelledby="modalAddQuestion" aria-hidden="true">
+<script src="../static/js/checkButtons.js" defer></script>
+{%endblock%} {%block body%} {%+ if modal == 0 %}
+<div
+  class="modal fade"
+  id="modalAdd"
+  tabindex="-1"
+  aria-labelledby="modalAddQuestion"
+  aria-hidden="true"
+>
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title name" id="exampleModalLabel">¡Muchas gracias por contribuir!</h3>
+        <h3 class="modal-title name" id="exampleModalLabel">
+          ¡Muchas gracias por contribuir!
+        </h3>
       </div>
       <div class="modal-body fs-5">
-        Te pedimos que añadas tantas preguntas quieras, ayudas a que este juego sea mas divertido para todos.
+        Te pedimos que añadas tantas preguntas quieras, ayudas a que este juego
+        sea mas divertido para todos.
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btnModal" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btnModal" data-bs-dismiss="modal">
+          Cerrar
+        </button>
       </div>
     </div>
   </div>
@@ -25,65 +31,123 @@
 {% endif %}
 
 <div class="container">
-    <form class="row row-cols-1 justify-content-center" action="{{ url_for('addQuestion') }}" method="POST">
-        <div class="col mb-3 ">
-            <label for="questionInput" class="form-label">Ingrese la pregunta a añadir, sin colocar los signos &iquest; - ? :</label>
-            <input type="text" class="form-control" id="questionInput" name="questionInput" placeholder="¿ Qué lenguajes más comunes son de alto nivel?" required>
-          </div>
-          <div class="col col-sm-12  mb-3">
-            <label for="questionOptionA" class="form-label">Opción A:</label>
-            <input type="text" class="form-control" id="questionOptionA" name="questionOptionA" placeholder="..." required>
-        </div>
-        <div class="col col-sm-12 mb-3">
-            <label for="questionOptionB" class="form-label">Opción B:</label>
-            <input type="text" class="form-control" id="questionOptionB" name="questionOptionB" placeholder="..." required>
-        </div>
-        <div class="col mb-3">
-            <label for="questionOptionC" class="form-label">Opción C:</label>
-            <input type="text" class="form-control" id="questionOptionC" name="questionOptionC" placeholder="..." required>
-        </div>
-        <div class="col mb-3">
-            <label for="questionOptionD" class="form-label">Opción D:</label>
-            <input type="text" class="form-control" id="questionOptionD" name="questionOptionD" placeholder="..." required>
-        </div>
-        <div class="col mb-3">
-            <label for="respuestaSelector" class="form-label">Respuesta correcta:</label>
-            <select class="form-select" aria-label="Default_select" id="respuestaSelector" name="respuestaSelector" placeholder="..." required>
-                <option selected disabled>Seleccione...</option>
-                <option value="questionOptionA">A</option>
-                <option value="questionOptionB">B</option>
-                <option value="questionOptionC">C</option>
-                <option value="questionOptionD">D</option>
-              </select>
-            </div>
+  <form
+    class="row row-cols-1 justify-content-center"
+    action="{{ url_for('addQuestion') }}"
+    method="POST"
+  >
+    <div class="col mb-3">
+      <label for="questionInput" class="form-label"
+        >Ingrese la pregunta a añadir, sin colocar los signos &iquest; - ?
+        :</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="questionInput"
+        name="questionInput"
+        placeholder="¿ Qué lenguajes más comunes son de alto nivel?"
+        required
+      />
+    </div>
+    <div class="col col-sm-12 mb-3">
+      <label for="questionOptionA" class="form-label">Opción A:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="questionOptionA"
+        name="questionOptionA"
+        placeholder="..."
+        required
+      />
+    </div>
+    <div class="col col-sm-12 mb-3">
+      <label for="questionOptionB" class="form-label">Opción B:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="questionOptionB"
+        name="questionOptionB"
+        placeholder="..."
+        required
+      />
+    </div>
+    <div class="col mb-3">
+      <label for="questionOptionC" class="form-label">Opción C:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="questionOptionC"
+        name="questionOptionC"
+        placeholder="..."
+        required
+      />
+    </div>
+    <div class="col mb-3">
+      <label for="questionOptionD" class="form-label">Opción D:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="questionOptionD"
+        name="questionOptionD"
+        placeholder="..."
+        required
+      />
+    </div>
+    <div class="col mb-3">
+      <label for="respuestaSelector" class="form-label"
+        >Respuesta correcta:</label
+      >
+      <select
+        class="form-select"
+        aria-label="Default_select"
+        id="respuestaSelector"
+        name="respuestaSelector"
+        placeholder="..."
+        required
+      >
+        <option selected disabled>Seleccione...</option>
+        <option value="questionOptionA">A</option>
+        <option value="questionOptionB">B</option>
+        <option value="questionOptionC">C</option>
+        <option value="questionOptionD">D</option>
+      </select>
+    </div>
 
-        <div class="col mb-3">
-        <label for="escalonSelector" class="form-label">Escalón a añadir la pregunta:</label>
-        <select class="form-select" aria-label="Default_select" id="escalonSelector" name="escalonSelector" required>
-            <option selected disabled>Seleccione...</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-          </select>
-        </div>
-        <p class="text-danger mb-4 fs-6">{{error}}</p>
-        <div class="col mb-3 text-center">
-            <button
-              type="submit"
-              class="btn col-4 "
-              id="btnAddQuestion"
-              name="btnAddQuestion"
-              >
-            AÑADIR PREGUNTA
-            </button>
-          </div>
-    </form>
+    <div class="col mb-3">
+      <label for="escalonSelector" class="form-label"
+        >Escalón a añadir la pregunta:</label
+      >
+      <select
+        class="form-select"
+        aria-label="Default_select"
+        id="escalonSelector"
+        name="escalonSelector"
+        required
+      >
+        <option selected disabled>Seleccione...</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+    </div>
+    <p class="text-danger mb-4 fs-6">{{error}}</p>
+    <div class="col mb-3 text-center">
+      <button
+        type="submit"
+        class="btn col-4"
+        id="btnAddQuestion"
+        name="btnAddQuestion"
+      >
+        AÑADIR PREGUNTA
+      </button>
+    </div>
+  </form>
 </div>
-
 
 {%endblock%}

@@ -1,49 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio de sesi&oacute;n</title>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='/images/favicon-32x32.png') }}">
-    <link href="{{ url_for('static', filename='/css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='/css/index.css') }}" rel="stylesheet">
-</head>
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='/images/favicon-32x32.png') }}"
+    />
+    <link
+      href="{{ url_for('static', filename='/css/bootstrap.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='/css/index.css') }}"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <!-- Contenedor del Form de Usuario -->
     <div class="container-fluid bgColor">
-        <form class="row row-cols-2 text-center justify-content-center size" action="{{ url_for('handle_user') }}" method="post">
-            <div class="card">
-                <img src="{{ url_for('static', filename='/images/user.png') }}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <label for="inputUser" class="form-label fs-3">
-                        Ingrese su nombre para comenzar
-                    </label> 
-                <input type="text" class="form-control mb-3" id="inputUser" name="inputUser" aria-describedby="inputUser" pattern="[a-zA-Z]+"/>
-                <h5 class="text-danger mb-3">{{error}}</h5>
-                <button type="submit" class="btn col-12 fs-4" id="btnOkUser" name="btnOkUser">
-                    Listo
-                </button>
-                </div>
-            </div>
-        </form>
+      <form
+        class="row row-cols-2 text-center justify-content-center size"
+        action="{{ url_for('handle_user') }}"
+        method="post"
+      >
+        <div class="card">
+          <img
+            src="{{ url_for('static', filename='/images/user.png') }}"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <label for="inputUser" class="form-label fs-3">
+              Ingrese su nombre para comenzar
+            </label>
+            <input
+              type="text"
+              class="form-control mb-3"
+              id="inputUser"
+              name="inputUser"
+              aria-describedby="inputUser"
+              pattern="[a-zA-Z]+"
+            />
+            <h5 class="text-danger mb-3">{{error}}</h5>
+            <button
+              type="submit"
+              class="btn col-12 fs-4"
+              id="btnOkUser"
+              name="btnOkUser"
+            >
+              Listo
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
 
-    <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 shadowFooter">
-        <ul class="nav col-lg-12 justify-content-around w-75">
-          <li class="nav-item">
-            <a href="https://linktr.ee/unerdevprogramacion1" target="_blank" class="nav-link text-white px-3 fs-4">Nosotres</a>
-          </li>
-          <li class="nav-item">
-            <a href="https://github.com/UNER-DEV/Programacion1" target="_blank" class="nav-link text-white px-3 fs-4">Repositorio</a>
-          </li>
-        </ul>
+    <footer
+      class="d-flex flex-wrap justify-content-center align-items-center py-3 shadowFooter"
+    >
+      <ul class="nav col-lg-12 justify-content-around w-75">
+        <li class="nav-item">
+          <a
+            href="https://linktr.ee/unerdevprogramacion1"
+            target="_blank"
+            class="nav-link text-white px-3 fs-4"
+            >Nosotres</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="https://github.com/UNER-DEV/Programacion1"
+            target="_blank"
+            class="nav-link text-white px-3 fs-4"
+            >Repositorio</a
+          >
+        </li>
+      </ul>
     </footer>
 
     <script src="../static/js/bootstrap.bundle.js"></script>
-</body>
-
-
+  </body>
 </html>

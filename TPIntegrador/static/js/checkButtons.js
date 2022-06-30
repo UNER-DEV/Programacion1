@@ -1,10 +1,9 @@
-$(function() {
-  $( document ).ready(function() {
-    $('#modalAdd').modal('toggle');
-    $('#modalQ').modal('toggle');
-    });
+$(function () {
+  $(document).ready(function () {
+    $("#modalAdd").modal("toggle");
+    $("#modalQ").modal("toggle");
+  });
 });
-
 
 function onHandleClick(elemento) {
   let buttons = $(".btnQuestionCheck");
@@ -13,6 +12,3 @@ function onHandleClick(elemento) {
   }
   elemento.style.background = "var(--color-btn-3)";
 }
-
-
-

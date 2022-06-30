@@ -2,7 +2,7 @@
 
 :root {
   --color-bg: #06a5cf;
-  --color-box:rgb(134, 134, 134);
+  --color-box: rgb(134, 134, 134);
   --color-btn-1: #3aaa34;
   --color-btn-2: rgb(255, 59, 59);
   --color-btn-3: #124368;
@@ -43,7 +43,7 @@ body {
   width: 80%;
 }
 
-/* ----- */
+/* ------------------ */
 /* CARD - CONTAINERS */
 
 .card {
@@ -142,11 +142,11 @@ body {
   color: var(--color-font-2);
 }
 
-.btnModal{  
+.btnModal {
   background-color: var(--color-btn-3);
   color: var(--color-font-1);
 }
-.btnModal:hover{
+.btnModal:hover {
   background-color: var(--color-font-1);
   border-color: var(--color-btn-3);
   color: var(--color-btn-3);
@@ -249,8 +249,6 @@ p {
   -webkit-text-stroke-color: var(--color-stroke);
 }
 
-
-
 label {
   margin-right: 5px;
 }
@@ -259,7 +257,6 @@ label {
   color: var(--color-font-bad);
   background: var(--color-font-1);
 }
-
 
 #lives {
   font-size: 1.5rem;
@@ -284,8 +281,6 @@ label {
   animation: scale-up 0.6s ease-in both;
 }
 
-
-
 .gif {
   border-radius: 1rem;
   box-shadow: 5px 5px 10px var(--color-box);
@@ -297,10 +292,8 @@ label {
 }
 
 .btnHome:hover {
-  border-color:var(--color-font-1);
+  border-color: var(--color-font-1);
 }
-
-
 
 /* ========================================================== */
 /* MEDIA QUERYS                                               */
@@ -348,7 +341,7 @@ label {
   }
 }
 
-/* RESULT TEXT */
+/* RESULT-TEXT */
 @-webkit-keyframes scale-up {
   0% {
     -webkit-transform: scaleY(0.4);
