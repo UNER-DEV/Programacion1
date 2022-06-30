@@ -71,13 +71,13 @@
     {
       "pregunta": "Es Python un lenguaje de alto nivel, de proposito general, multiparadigma principalmente imperativo ",
       "a": "No, es un lenguaje de bajo nivel.",
-      "b": "Si, y también es orientado a objetos y funcional",
+      "b": "Si, y tambien es orientado a objetos y funcional",
       "c": "No, no es principalmente imperativo",
       "d": "Si, pero no es multiparadigma",
-      "respuesta": "Si, y también es orientado a objetos y funcional"
+      "respuesta": "Si, y tambien es orientado a objetos y funcional"
     },
     {
-      "pregunta": "Cual de las siguientes opciones con Python, devuelve como resultado esta operación '6 ** 2 + 6' ",
+      "pregunta": "Cual de las siguientes opciones con Python, devuelve como resultado esta operacion '6 ** 2 + 6' ",
       "a": "6",
       "b": "18",
       "c": "42",
@@ -103,11 +103,11 @@
       "respuesta": "Lentitud"
     },{
       "pregunta": "Cual de estas opciones contiene una fecha incorrecta, de la version de Phyton",
-      "a": "Versión 0.9 (1988)",
-      "b": "Versión 3.10.2 (13 de Enero de 2022)",
-      "c": "Versión 1.6 (2000)",
-      "d": "Versión 3.9 (2020)",
-      "respuesta": "Versión 0.9 (1988)"
+      "a": "Version 0.9 (1988)",
+      "b": "Version 3.10.2 (13 de Enero de 2022)",
+      "c": "Version 1.6 (2000)",
+      "d": "Version 3.9 (2020)",
+      "respuesta": "Version 0.9 (1988)"
   }
   ],
   "5": [
@@ -121,11 +121,11 @@
     },
     {
       "pregunta": "Cual de las siguientes operaciones es correcta, dada la siguiente variable: letras = 'abcdefghijklmnopqrstuvwxyz'",
-      "a": "letras[1] → 'a'",
+      "a": "letras[1] = 'a'",
       "b": "Ninguna",
-      "c": "letras[7] → 'g'",
-      "d": "letras[-25] → 'b'",
-      "respuesta": "letras[-25] → 'b'"
+      "c": "letras[7] = 'g'",
+      "d": "letras[-25] = 'b'",
+      "respuesta": "letras[-25] = 'b'"
   }
   ],
   "6": [
@@ -138,7 +138,7 @@
       "respuesta": "Todas las anteriores"
     },
     {
-      "pregunta": "Es cierto que en el contexto de programación, una función es un nombre que se le asigna a una secuencia, de sentencias, que llevan a cabo un computo",
+      "pregunta": "Es cierto que en el contexto de programacion, una funcion es un nombre que se le asigna a una secuencia, de sentencias, que llevan a cabo un computo",
       "a": "Si, pero llevan a cabo subtareas",
       "b": "No, se le asigna a una secuencia de sentencias de CODIGO",
       "c": "Si, es Verdadero",
@@ -155,7 +155,7 @@
       "d": "Ninguna de las anteriores",
       "respuesta": "Seleccion/Iteracion/Secuencia/Decision"
     }, {
-      "pregunta": "Puede una función solo retornar un valor, en términos estrictos",
+      "pregunta": "Puede una funcion solo retornar un valor, en terminos estrictos",
       "a": "Verdadero",
       "b": "Falso",
       "c": "No, una funcion no retorna nada",

@@ -25,6 +25,7 @@ score = 0
 datos = ["Usuario", "Puntaje", "Tiempo_Inicio", "Tiempo_Fin"]
 file_name = 'db\savedScores.json'
 pregunta = ["pregunta","a","b","c","d","respuesta"]
+contador = 0
 
 # ========================================================== #
 #  FUNCIONES                                                 #
@@ -152,7 +153,7 @@ def queryScores():
 @app.route('/resultado')
 def finalResult():
     saveScore()
-    return render_template('result.html', life = life)
+    return render_template('result.html', life = life ,score=score)
 
 @app.route('/preguntas', methods=['POST'])
 def handle_data():
@@ -165,13 +166,21 @@ def handle_data():
         correcto = request.form['correcto']
         if(value == correcto):
             score += 1
-            step = int(request.form['btnNext']) + 1
-            if(step <= 8):
+            step = int(request.form['btnNext'])
+            if(step < 8):
+                step = int(request.form['btnNext']) + 1
                 return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life)
+            elif(step==8):
+                global contador
+                if(contador < 4):
+                    contador+=1
+                    return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life)
             return finalResult()
         else:
-            print(life)
-            if(life > 1):
+            if(step==8):
+                life = 1
+                return finalResult()
+            elif(life > 1):
                 life -= 1
                 return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life)
             else:

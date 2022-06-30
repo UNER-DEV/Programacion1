@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 :root {
     --color-bg: #06a5cf;
     --color-btn-1: #3aaa34;
@@ -43,6 +45,11 @@ body {
 
 .txt-navbar {
   color: var(--color-bg);
+}
+
+.txt-navbar:hover{
+  color: var(--color-bg);
+border-color: white;
 }
 
 .shadowFooter {
@@ -165,20 +172,7 @@ font-size: 30px;
 .flipX:hover {
   animation: 2s anim-flipX ease infinite;
 }
-@keyframes anim-flipX {
-  0% {
-    opacity: 0;
-    transform: rotateX(90def);
-  }
-  50% {
-    opacity: 1;
-    transform: rotateX(720deg);
-  }
-  100% {
-    opacity: 1;
-    transform: rotateX(720deg);
-  }
-}
+
 
 label {
   margin-right: 5px;
@@ -208,19 +202,59 @@ label {
   text-shadow: 1px 1px #2b2b2b;
 }
 
+#loser h1{
+font-size: 5rem;
+font-family: 'Press Start 2P', cursive;
+color: red;
+}
 
+#winner h1{
+font-size: 5rem;
+font-family: 'Press Start 2P', cursive;
+color: green;
+}
 
+.textResult{
+-webkit-animation: scale-up 0.8s ease-in both;
+animation: scale-up 0.6s ease-in both;
+}
+
+.btnReplay{
+  font-size: 1.3rem;
+  font-family: 'Lucida Sans Regular', sans-serif;
+  color: var(--color-btn-1);
+}
+
+.btnReplay:hover{
+  color: var(--color-btn-1);
+  border-color: white;
+}
+
+.btnReplay i:hover{
+  -webkit-animation: rotate-center 0.8s ease-in-out both;
+  animation: rotate-center 0.8s ease-in-out both;
+}
+
+.cardResult{
+  width: 70%;
+  border-color: var(--color-bg) ;
+  border-width: .5rem;
+  border-radius: 2rem;
+}
+
+.gif{
+  border-radius: 1rem;
+  box-shadow: 5px 5px 10px rgb(134, 134, 134);
+}
+.gifWin{
+  height: 28rem;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 10px rgb(134, 134, 134); 
+}
 /* ========================================================== */
 /* MEDIA QUERYS                                               */
 /* ========================================================== */
 
-/*
-@media screen and (min-width: 1920px){
-  .bgColor {
-    height: 60rem;
-    padding: 2%;
-  }
-}*/
 
 @media (max-width: 1380px){
   #containerBar{
@@ -245,3 +279,74 @@ label {
 }
 
 
+/* ========================================================== */
+/* KEYFRAMES                                               */
+/* ========================================================== */
+
+/* NAVBAR  */
+@keyframes anim-flipX {
+  0% {
+    opacity: 0;
+    transform: rotateX(90def);
+  }
+  50% {
+    opacity: 1;
+    transform: rotateX(720deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(720deg);
+  }
+}
+
+/* RESULT TEXT */
+@-webkit-keyframes scale-up{
+  0% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+  }
+}
+@keyframes scale-up{
+  0% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+  }
+}
+
+/* ROTATE REPLAY */
+ @-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
