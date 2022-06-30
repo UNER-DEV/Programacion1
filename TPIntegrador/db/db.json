@@ -23,14 +23,6 @@
       "c": "Semantica",
       "d": "Clasificacion por nivel",
       "respuesta": "Semantica"
-    },
-    {
-      "pregunta": "Es una expresion una combinacion de valores, variables y operadores",
-      "a": "Si, ademas un valor es considerado por si mismo una expresion y una variable",
-      "b": "No, solo es de variables y operadores",
-      "c": "No, una expresion solo contiene un valor unico",
-      "d": "Si, esa afirmacion es correcta",
-      "respuesta": "Si, ademas un valor es considerado por si mismo una expresion y una variable"
     }
   ],
   "2": [
@@ -85,12 +77,12 @@
       "respuesta": "Si, y tambien es orientado a objetos y funcional"
     },
     {
-      "pregunta": "Cual de las siguientes opciones con Python, devuelve como resultado esta operacion '6 ** 2 + 6' ",
-      "a": "6",
-      "b": "18",
-      "c": "42",
-      "d": "Error",
-      "respuesta": "42"
+      "pregunta": "Es una expresion una combinacion de valores, variables y operadores",
+      "a": "Si, ademas un valor es considerado por si mismo una expresion y una variable",
+      "b": "No, solo es de variables y operadores",
+      "c": "No, una expresion solo contiene un valor unico",
+      "d": "Si, esa afirmacion es correcta",
+      "respuesta": "Si, ademas un valor es considerado por si mismo una expresion y una variable"
     }
   ],
   "4": [
@@ -183,7 +175,7 @@
       "respuesta": "Todos son correctos"
     },
     {
-      "pregunta": "Como se leería lo siguiente: dos cero dos cuatro",
+      "pregunta": "Como se leeria lo siguiente: dos cero dos cuatro",
       "a": "2044",
       "b": "0044",
       "c": "2024",
@@ -197,6 +189,30 @@
       "c": "Version 1.6 (2000)",
       "d": "Version 3.9 (2020)",
       "respuesta": "Version 0.9 (1988)"
+    },
+    {
+      "pregunta": "Es correcta la salida >> [3,2,1] si realizamos un print de la siguiente expresion: mi_lista.reverse()",
+      "a": "Si, pero no importa si defino o no la variable mi_lista",
+      "b": "Si, es correcto unicamente si: mi_lista = [1,2,3]",
+      "c": "No, para obtener esa salida y si mi_lista = [1,2,3], debo utilizar la funcion sort()",
+      "d": "Ninguna de las anteriores opciones es correcta",
+      "respuesta": "Si, es correcto unicamente si: mi_lista = [1,2,3]"
+    },
+    {
+      "pregunta": "Es cierto que un print de la expresion: len('PROG1') devolvera como resultado 5",
+      "a": "Si, pero internamente le suma un valor mas, por lo que el resultado es 6",
+      "b": "No, esa expresion es invalida",
+      "c": "Si, la funcion len() devuelve la longitud de lo que reciba por parametro. En este caso, el string 'PROG1' tiene 5 caracteres",
+      "d": "Ninguna de las anteriores opciones es correcta",
+      "respuesta": "Si, la funcion len() devuelve la longitud de lo que reciba por parametro. En este caso, el string 'PROG1' tiene 5 caracteres"
+    },
+    {
+      "pregunta": "Cual de las siguientes opciones con Python, devuelve como resultado esta operacion '6 ** 2 + 6' ",
+      "a": "6",
+      "b": "18",
+      "c": "42",
+      "d": "Error",
+      "respuesta": "42"
     }
   ]
 }
