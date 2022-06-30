@@ -28,6 +28,7 @@ file_name = os.path.join(SITE_ROOT, "db", "savedScores.json")
 pregunta = ["pregunta","a","b","c","d","respuesta"]
 contador = 0
 modal=0
+modalQuestion = 0
 
 # ========================================================== #
 #  FUNCIONES                                                 #
@@ -39,7 +40,8 @@ def refresh_all():
     global end 
     global life 
     global score
-    global modal 
+    global modal
+    global modalQuestion  
     step = 1
     user = ''
     start = ''
@@ -47,6 +49,8 @@ def refresh_all():
     life = 3
     score = 0
     modal = 0
+    modalQuestion = 0
+    
     
 
 def refresh_game():
@@ -169,20 +173,27 @@ def handle_data():
     global user
     global life
     global score
+    global modalQuestion
     try:
         value = request.form['option']
         correcto = request.form['correcto']
+        modalQuestion+=1
         if(value == correcto):
-            score += 1
             step = int(request.form['btnNext'])
             if(step < 8):
+                score += 1
                 step = int(request.form['btnNext']) + 1
-                return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life)
+                if(step==8):
+                    modalQuestion=0
+                return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life, modalQuestion = modalQuestion)
             elif(step==8):
                 global contador
                 if(contador < 4):
+                    print(f'pregunta {contador}, escalon 8')
+                    print(f'modal step8: {modalQuestion} y step: {step}')
                     contador+=1
-                    return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life)
+                    return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life,contador=contador ,modalQuestion = modalQuestion)
+            score += 1
             return finalResult()
         else:
             if(step==8):
@@ -190,12 +201,12 @@ def handle_data():
                 return finalResult()
             elif(life > 1):
                 life -= 1
-                return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life)
+                return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life, modalQuestion = modalQuestion)
             else:
                 return finalResult()
     except HTTPException:
         print('Todo es bronca y dolor')
-        return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life)
+        return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life, modalQuestion = modalQuestion)
 
 @app.route('/reload', methods=['POST'])
 def settings_game():
@@ -204,7 +215,7 @@ def settings_game():
         refresh_game()
         global step
         global user
-        return render_template('question.html', data = pregEscalones(dataLocal), step = step, user = user, life = life)
+        return render_template('question.html', data = pregEscalones(dataLocal), step = step, user = user, life = life, modalQuestion=modalQuestion, contador=contador)
 
 @app.route('/reloadGames', methods=['POST'])
 def settings_home():

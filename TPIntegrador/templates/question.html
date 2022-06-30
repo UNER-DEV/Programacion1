@@ -6,6 +6,52 @@
 {%endblock%}
 {% block body %}
 
+<!-- MODAL INICIAL/ESCALON 8 -->
+{%+ if modalQuestion == 0 %}
+<div class="modal fade" id="modalQ" tabindex="-1" aria-labelledby="modalQ" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title text-warning">
+          {%+ if step!="8" %}REGLAS DEL JUEGO {% endif %}
+          {%+ if step=="8" %}¡CUIDADO!{% endif %}<br>
+          {%+ if step=="8" %}ESTAS EN EL ESCALON {{step}} 
+          {% endif %}
+        </h3>
+      </div>
+        {%+ if step!="8" %}
+        <div class="modal-body mb-3 fs-5">
+        <u class="list-group list-group-flush" style="text-decoration-line: none">
+          <li class="list-group-item"><i class="fa-solid fa-angles-right"></i> Tienes 3 vidas, que se restaran con cada respuesta incorrecta.</li>
+          <li class="list-group-item"><i class="fa-solid fa-angles-right"></i> Deberas responder una pregunta por escalón hasta llegar al 8.</li>
+          <li class="list-group-item"><i class="fa-solid fa-angles-right"></i> En el escalón 8, para poder ganar, deberás responder correctamente 4 preguntas consecutivas. Caso contrario, perderás.</li>
+        </u>
+        <h3 class="text-center text-success my-3">¡Buena suerte!</h3>
+        </div>
+        {% endif %}
+
+        {%+ if step=="8" %}
+        <div class="modal-body mb-3 fs-5">
+          <u class="list-group list-group-flush" style="text-decoration-line: none">
+            <li class="list-group-item"><i class="fa-solid fa-angles-right"></i> NO puedes perder ninguna vida.</li>
+            <li class="list-group-item"><i class="fa-solid fa-angles-right"></i> En caso que lo hagas, perderás el juego.</li>
+            <li class="list-group-item"><i class="fa-solid fa-angles-right"></i> Recordá que deberás responder 4 preguntas correctas, consecutivamente.</li>
+          </u>
+          <h3 class="text-center text-success my-3">¡Vamos, estas a un paso de ganar!</h3>
+          </div>
+        {% endif %}
+      
+      <div class="modal-footer ">
+        <button type="submit" class="btn btnModal" data-bs-dismiss="modal">Continuar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+
 <div class="container-fluid bgColor">
   <input type="hidden" id="step" value="{{step}}" />
   <div class="container py-5" >
@@ -17,8 +63,10 @@
     </div>
   </div>
     <h3 id="lives" class="justify-content-center text-center my-3">VIDAS RESTANTES: {%for i in range(0, life)%}<i class="fas fa-heart ps-3 text-danger fa-beat animated"> </i>{%endfor%}{%for i in range(0, 3 - life)%}<i class="far fa-heart ps-3 text-secondary"> </i>{%endfor%}</h3>
+    {%+ if step==8 %}
+    <h3 class="justify-content-center text-center my-3">Te quedan {{4-contador}} preguntas por responder</h3>
+    {% endif %}
   </div>
-
 
   <form class="row row-cols-2 text-center justify-content-center" action="{{ url_for('handle_data') }}" method="POST">
     <div class="card cardQuestion" >

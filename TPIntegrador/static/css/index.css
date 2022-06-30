@@ -2,15 +2,15 @@
 
 :root {
   --color-bg: #06a5cf;
-  --color-box: var(--color-box);
+  --color-box:rgb(134, 134, 134);
   --color-btn-1: #3aaa34;
   --color-btn-2: rgb(255, 59, 59);
   --color-btn-3: #124368;
   --color-font-1: white;
   --color-font-2: black;
   --color-font-3: rgb(71, 71, 71);
-  --color-font-bad: var(--color-font-bad);
-  --color-font-good: var(--color-font-good);
+  --color-font-bad: red;
+  --color-font-good: green;
   --color-footer: #f39200;
   --color-logo: #ffd900;
   --color-progress: rgb(111, 200, 210);
@@ -33,6 +33,19 @@ body {
   margin: 0 auto;
 }
 
+/* ------ */
+/* INDEX */
+
+.bgColor {
+  background-color: var(--color-bg);
+  border-radius: 50px 50px 0px 0px;
+  margin: 1% 10% 0% 10%;
+  width: 80%;
+}
+
+/* ----- */
+/* CARD - CONTAINERS */
+
 .card {
   margin: var(--margin-cards);
   width: 30rem;
@@ -43,12 +56,15 @@ body {
   width: 50rem;
 }
 
-.bgColor {
-  background-color: var(--color-bg);
-  border-radius: 50px 50px 0px 0px;
-  margin: 1% 10% 0% 10%;
-  width: 80%;
+.cardResult {
+  width: 70%;
+  border-color: var(--color-bg);
+  border-width: 0.5rem;
+  border-radius: 2rem;
 }
+
+/* ---------------- */
+/* NAVBAR - FOOTER */
 
 .txt-navbar {
   color: var(--color-bg);
@@ -68,21 +84,19 @@ body {
   z-index: 9999;
 }
 
-#letsPlay {
-  background-color: var(--color-logo);
-  border-radius: 50%;
-  color: var(--color-font-1);
-  font-weight: 500;
-  height: 200px;
-  width: 200px;
+#navbarNav,
+.modal-title,
+.modal-body,
+.modal-footer {
+  font-family: "Lucida Sans Regular", sans-serif;
 }
-#letsPlay:hover {
-  background-color: var(--color-font-1);
-  border-color: var(--color-logo);
-  border-width: 10px;
-  color: var(--color-font-2);
-  font-weight: 500;
+
+.flipX:hover {
+  animation: 2s anim-flipX ease infinite;
 }
+
+/* -------- */
+/* BUTTONS */
 
 .btnExit {
   background-color: var(--color-btn-2);
@@ -94,6 +108,23 @@ body {
   background-color: var(--color-font-1);
   border-color: var(--color-btn-2);
   color: var(--color-font-2);
+}
+
+#letsPlay {
+  background-color: var(--color-logo);
+  border-radius: 50%;
+  color: var(--color-font-1);
+  font-weight: 500;
+  height: 200px;
+  width: 200px;
+}
+
+#letsPlay:hover {
+  background-color: var(--color-font-1);
+  border-color: var(--color-logo);
+  border-width: 10px;
+  color: var(--color-font-2);
+  font-weight: 500;
 }
 
 #btnNext,
@@ -120,6 +151,37 @@ body {
   border-color: var(--color-btn-3);
   color: var(--color-btn-3);
 }
+
+.btnQuestionCheck {
+  background-color: var(--color-font-3);
+  width: 75%;
+  margin-bottom: 2%;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px var(--color-box);
+}
+
+.btnQuestionCheck:hover {
+  background-color: var(--color-shadow-footer);
+}
+
+.btnReplay {
+  font-size: 1.3rem;
+  font-family: "Lucida Sans Regular", sans-serif;
+  color: var(--color-btn-1);
+}
+
+.btnReplay:hover {
+  color: var(--color-btn-1);
+  border-color: var(--color-font-1);
+}
+
+.btnReplay i:hover {
+  -webkit-animation: rotate-center 0.8s ease-in-out both;
+  animation: rotate-center 0.8s ease-in-out both;
+}
+
+/* ----- */
+/* TEXT */
 
 p {
   display: inline-block;
@@ -159,6 +221,15 @@ p {
   color: var(--color-random);
 }
 
+#titleQuestion {
+  color: var(--color-title-question);
+  font-weight: 700;
+  text-shadow: 2px 2px var(--color-shadow-title);
+}
+
+/* --------------- */
+/* NAVBAR PROGRESS */
+
 .progress {
   background-color: var(--color-progress);
   height: 4rem;
@@ -178,22 +249,7 @@ p {
   -webkit-text-stroke-color: var(--color-stroke);
 }
 
-#titleQuestion {
-  color: var(--color-title-question);
-  font-weight: 700;
-  text-shadow: 2px 2px var(--color-shadow-title);
-}
 
-#navbarNav,
-.modal-title,
-.modal-body,
-.modal-footer {
-  font-family: "Lucida Sans Regular", sans-serif;
-}
-
-.flipX:hover {
-  animation: 2s anim-flipX ease infinite;
-}
 
 label {
   margin-right: 5px;
@@ -204,17 +260,6 @@ label {
   background: var(--color-font-1);
 }
 
-.btnQuestionCheck {
-  background-color: var(--color-font-3);
-  width: 75%;
-  margin-bottom: 2%;
-  border-radius: 20px;
-  box-shadow: 5px 5px 10px var(--color-box);
-}
-
-.btnQuestionCheck:hover {
-  background-color: var(--color-shadow-footer);
-}
 
 #lives {
   font-size: 1.5rem;
@@ -239,28 +284,7 @@ label {
   animation: scale-up 0.6s ease-in both;
 }
 
-.btnReplay {
-  font-size: 1.3rem;
-  font-family: "Lucida Sans Regular", sans-serif;
-  color: var(--color-btn-1);
-}
 
-.btnReplay:hover {
-  color: var(--color-btn-1);
-  border-color: var(--color-font-1);
-}
-
-.btnReplay i:hover {
-  -webkit-animation: rotate-center 0.8s ease-in-out both;
-  animation: rotate-center 0.8s ease-in-out both;
-}
-
-.cardResult {
-  width: 70%;
-  border-color: var(--color-bg);
-  border-width: 0.5rem;
-  border-radius: 2rem;
-}
 
 .gif {
   border-radius: 1rem;
