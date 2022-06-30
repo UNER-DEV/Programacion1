@@ -2,17 +2,24 @@
 
 :root {
   --color-bg: #06a5cf;
+  --color-box: var(--color-box);
   --color-btn-1: #3aaa34;
   --color-btn-2: rgb(255, 59, 59);
   --color-btn-3: #124368;
   --color-font-1: white;
   --color-font-2: black;
-  --color-font-3: red;
-  --color-font-4: rgb(71, 71, 71);
+  --color-font-3: rgb(71, 71, 71);
+  --color-font-bad: var(--color-font-bad);
+  --color-font-good: var(--color-font-good);
   --color-footer: #f39200;
   --color-logo: #ffd900;
+  --color-progress: rgb(111, 200, 210);
   --color-random: #8e44ad;
-  --color-shadow: #458a99;
+  --color-shadow-footer: #458a99;
+  --color-shadow-title: #2b2b2b;
+  --color-stroke: rgb(72, 72, 72);
+  --color-title-question: #ef9000;
+  --margin-cards: 2% 5% 5% 5%;
 }
 
 * {
@@ -27,12 +34,12 @@ body {
 }
 
 .card {
-  margin: 2% 5% 5% 5%;
+  margin: var(--margin-cards);
   width: 30rem;
 }
 
 .cardQuestion {
-  margin: 2% 5% 5% 5%;
+  margin: var(--margin-cards);
   width: 50rem;
 }
 
@@ -54,7 +61,7 @@ body {
 
 .shadowFooter {
   background-color: var(--color-footer);
-  box-shadow: 2px -4px 20px var(--color-shadow);
+  box-shadow: 2px -4px 20px var(--color-shadow-footer);
   margin-bottom: 0%;
   position: absolute;
   width: 100%;
@@ -153,14 +160,14 @@ p {
 }
 
 .progress {
-  background-color: rgb(111, 200, 210);
+  background-color: var(--color-progress);
   height: 4rem;
   padding: 0px;
   width: 80%;
 }
 
 .progress-bar {
-  -webkit-text-stroke: 1px var(--color-font-4);
+  -webkit-text-stroke: 1px var(--color-font-3);
   font-size: 20px;
   background-color: var(--color-random);
 }
@@ -168,13 +175,13 @@ p {
 #bar {
   font-size: 30px;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgb(72, 72, 72);
+  -webkit-text-stroke-color: var(--color-stroke);
 }
 
 #titleQuestion {
-  color: #ef9000;
+  color: var(--color-title-question);
   font-weight: 700;
-  text-shadow: 2px 2px #2b2b2b;
+  text-shadow: 2px 2px var(--color-shadow-title);
 }
 
 #navbarNav,
@@ -193,38 +200,38 @@ label {
 }
 #msg {
   margin-top: 10px;
-  color: var(--color-font-3);
+  color: var(--color-font-bad);
   background: var(--color-font-1);
 }
 
 .btnQuestionCheck {
-  background-color: var(--color-font-4);
+  background-color: var(--color-font-3);
   width: 75%;
   margin-bottom: 2%;
   border-radius: 20px;
-  box-shadow: 5px 5px 10px rgb(134, 134, 134);
+  box-shadow: 5px 5px 10px var(--color-box);
 }
 
 .btnQuestionCheck:hover {
-  background-color: var(--color-shadow);
+  background-color: var(--color-shadow-footer);
 }
 
 #lives {
   font-size: 1.5rem;
   color: var(--color-footer);
-  text-shadow: 1px 1px #2b2b2b;
+  text-shadow: 1px 1px var(--color-shadow-title);
 }
 
 #loser h1 {
   font-size: 5rem;
   font-family: "Press Start 2P", cursive;
-  color: red;
+  color: var(--color-font-bad);
 }
 
 #winner h1 {
   font-size: 5rem;
   font-family: "Press Start 2P", cursive;
-  color: green;
+  color: var(--color-font-good);
 }
 
 .textResult {
@@ -257,12 +264,12 @@ label {
 
 .gif {
   border-radius: 1rem;
-  box-shadow: 5px 5px 10px rgb(134, 134, 134);
+  box-shadow: 5px 5px 10px var(--color-box);
 }
 .gifWin {
   height: 28rem;
   border-radius: 1rem;
-  box-shadow: 5px 5px 10px rgb(134, 134, 134);
+  box-shadow: 5px 5px 10px var(--color-box);
 }
 
 .btnHome:hover {
