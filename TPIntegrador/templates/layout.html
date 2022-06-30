@@ -1,56 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %} {% endblock %}</title>
-    {% block plugins %}
-    {% endblock %}
+    {% block plugins %} {% endblock %}
     <script src="../static/js/jquery-3.5.1.js"></script>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='/images/favicon-32x32.png') }}"/>
-    <link href="{{ url_for('static', filename='/css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='/css/all.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='/css/solid.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='/css/fontawesome.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='/css/font-awesome-animation.css') }}" rel="stylesheet" defer>
-    <link href="{{ url_for('static', filename='/css/index.css') }}" rel="stylesheet" defer/>
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='/images/favicon-32x32.png') }}"
+    />
+    <link
+      href="{{ url_for('static', filename='/css/bootstrap.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='/css/all.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='/css/solid.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='/css/fontawesome.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='/css/font-awesome-animation.css') }}"
+      rel="stylesheet"
+      defer
+    />
+    <link
+      href="{{ url_for('static', filename='/css/index.css') }}"
+      rel="stylesheet"
+      defer
+    />
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg bg-light shadow p-3 mb-5 rounded">
       <div class="container-fluid">
-
         <form action="{{ url_for('settings_home') }}" method="POST">
-          <button type="submit" class="btn" value="true" name="reloadHome">
-            <img src=" {{ url_for('static', filename='/images/logo.png') }} " alt="logo" height="100"/>
+          <button
+            type="submit"
+            class="btn btnHome"
+            value="true"
+            name="reloadHome"
+          >
+            <img
+              src=" {{ url_for('static', filename='/images/logo.png') }} "
+              alt="logo"
+              height="100"
+            />
           </button>
         </form>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
           <ul class="navbar-nav">
             <form action="{{ url_for('settings_game') }}" method="POST">
               <li class="nav-item flipX">
-                <button type="submit" class="btn fs-2 txt-navbar" value="true" name="reloadGame">
+                <button
+                  type="submit"
+                  class="btn fs-2 txt-navbar"
+                  value="true"
+                  name="reloadGame"
+                >
                   ¡Vamos a jugar!
                 </button>
               </li>
             </form>
             <form action="{{ url_for('queryScores') }}" method="POST">
               <li class="nav-item flipX">
-                <button type="submit" class="btn fs-2 txt-navbar" value="true" name="queryScores">
+                <button
+                  type="submit"
+                  class="btn fs-2 txt-navbar"
+                  value="true"
+                  name="queryScores"
+                >
                   Consultas
                 </button>
               </li>
             </form>
             <form action="{{ url_for('addQuestion') }}" method="POST">
               <li class="nav-item flipX">
-                <button type="submit" class="btn btn-light fs-2 txt-navbar" value="true" name="addQuestion">
+                <button
+                  type="submit"
+                  class="btn btn-light fs-2 txt-navbar"
+                  value="true"
+                  name="addQuestion"
+                >
                   Añadir pregunta
                 </button>
               </li>
@@ -65,11 +120,12 @@
         </form>
       </div>
     </nav>
-    
-    {% block body %} 
-    {% endblock %}
 
-    <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 shadowFooter">
+    {% block body %} {% endblock %}
+
+    <footer
+      class="d-flex flex-wrap justify-content-center align-items-center py-3 shadowFooter"
+    >
       <ul class="nav col-lg-12 justify-content-around w-75">
         <li class="nav-item">
           <a href="#" class="nav-link text-white px-3 fs-4">Nosotres</a>
@@ -82,5 +138,4 @@
 
     <script src="../static/js/bootstrap.min.js"></script>
   </body>
-
 </html>

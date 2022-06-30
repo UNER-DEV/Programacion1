@@ -8,6 +8,7 @@ import os
 import random as rdm
 from datetime import datetime
 #import time
+from modules.utils import *
 
 # ========================================================== #
 #  VARIABLES                                                 #
@@ -26,6 +27,7 @@ datos = ["Usuario", "Puntaje", "Tiempo_Inicio", "Tiempo_Fin"]
 file_name = 'db\savedScores.json'
 pregunta = ["pregunta","a","b","c","d","respuesta"]
 contador = 0
+modal=0
 
 # ========================================================== #
 #  FUNCIONES                                                 #
@@ -43,6 +45,7 @@ def refresh_all():
     end = ''
     life = 3
     score = 0
+    
 
 def refresh_game():
     global step 
@@ -119,14 +122,16 @@ def exit():
 
 @app.route('/añadirPregunta', methods=['POST'])
 def addQuestion():
+    global modal
+    print(modal)  
     try:
-        question=request.form['questionInput']
-        optionA=request.form['questionOptionA'] 
-        optionB=request.form['questionOptionB'] 
-        optionC=request.form['questionOptionC'] 
-        optionD=request.form['questionOptionD']
-        respCorrecta=request.form[str(request.form['respuestaSelector'])]  
-        escalon=request.form['escalonSelector'] 
+        question = normalizar(request.form['questionInput']).capitalize()
+        optionA = normalizar (request.form['questionOptionA']).capitalize()
+        optionB = normalizar (request.form['questionOptionB']).capitalize()
+        optionC = normalizar(request.form['questionOptionC']).capitalize() 
+        optionD = normalizar(request.form['questionOptionD']).capitalize()
+        respCorrecta = normalizar(request.form[str(request.form['respuestaSelector'])]).capitalize()  
+        escalon= request.form['escalonSelector']
         entry={pregunta[0]: question, pregunta[1]: optionA, pregunta[2]: optionB, pregunta[3]: optionC,pregunta[4]: optionD,pregunta[5]: respCorrecta }
         try:
             with open("db/db.json", "r") as file:
@@ -135,10 +140,11 @@ def addQuestion():
             print("JSON Vacio")
         data[escalon].append(entry)
         with open("db/db.json", "w") as file:
-            json.dump(data, file, indent = 4)   
+            json.dump(data, file, indent = 4)
+        modal=+1
     except:
-        return render_template('addQuestion.html', error="*Recuerde que debe llenar todos los campos para continuar")
-    return render_template('addQuestion.html')
+        return render_template('addQuestion.html', error="*Recuerde que debe llenar todos los campos para continuar", modal=modal)
+    return render_template('addQuestion.html',modal=modal)
 
 @app.route('/consultaPuntajes', methods=['POST'])
 def queryScores():

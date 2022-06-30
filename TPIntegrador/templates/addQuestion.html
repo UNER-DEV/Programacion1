@@ -1,11 +1,33 @@
 {% extends './layout.html' %}
 {%block title%}añadir preguntas{%endblock%}
+{%block plugins%}
+  <script src="../static/js/checkButtons.js" defer></script>    
+{%endblock%}
 
 {%block body%}
+
+{%+ if modal == 0 %}
+<div class="modal fade" id="modalAdd" tabindex="-1" aria-labelledby="modalAddQuestion" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title name" id="exampleModalLabel">¡Muchas gracias por contribuir!</h3>
+      </div>
+      <div class="modal-body fs-5">
+        Te pedimos que añadas tantas preguntas quieras, ayudas a que este juego sea mas divertido para todos.
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btnModal" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
 <div class="container">
     <form class="row row-cols-1 justify-content-center" action="{{ url_for('addQuestion') }}" method="POST">
         <div class="col mb-3 ">
-            <label for="questionInput" class="form-label">Ingrese la pregunta a añadir</label>
+            <label for="questionInput" class="form-label">Ingrese la pregunta a añadir, sin colocar los signos &iquest; - ? :</label>
             <input type="text" class="form-control" id="questionInput" name="questionInput" placeholder="¿ Qué lenguajes más comunes son de alto nivel?" required>
           </div>
           <div class="col col-sm-12  mb-3">
@@ -53,13 +75,15 @@
         <div class="col mb-3 text-center">
             <button
               type="submit"
-              class="btn btn-info col-6 "
+              class="btn col-4 "
               id="btnAddQuestion"
               name="btnAddQuestion"
-            >AÑADIR PREGUNTA
+              >
+            AÑADIR PREGUNTA
             </button>
           </div>
     </form>
 </div>
+
 
 {%endblock%}
