@@ -38,13 +38,15 @@ def refresh_all():
     global start 
     global end 
     global life 
-    global score 
+    global score
+    global modal 
     step = 1
     user = ''
     start = ''
     end = ''
     life = 3
     score = 0
+    modal = 0
     
 
 def refresh_game():
