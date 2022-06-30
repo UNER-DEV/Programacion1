@@ -5,3 +5,6 @@
 - Federico José Rodriguez
 - María Emilia Walter
 - Sebastian Ignacio Centurion
+
+## Búsquenos en Linkedin:
+- https://linktr.ee/unerdevprogramacion1
