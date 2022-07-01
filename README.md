@@ -1,14 +1,5 @@
-# Repositorio para la materia Programacion 1 (2022)
-
-## LINK AL VIDEO DE YOUTUBE
-## INTEGRANTES:
-- Camila Laureana Silva
-- Federico José Rodriguez
-- María Emilia Walter
-- Sebastian Ignacio Centurion
-
-## PERFILES en Linkedin:
-- https://linktr.ee/unerdevprogramacion1
+# TP INTEGRADOR: 
+### :red_circle: **IMPORTANTE LEER PARA EJECUTARLO CORRECTAMENTE** :red_circle: 
 
 ## INSTALACIÓN FLASK + PIP
 - 1) Abrir consola de windows
@@ -21,3 +12,16 @@
 ## EJECUCIÓN DEL PROYECTO
 - Abra la consola, situándose en la carpeta dónde se encuentra el archivo app.py y ejecute el siguiente comando: Python app.py
 
+## LINK AL VIDEO DE YOUTUBE
+-
+
+# INFORMACIÓN DEL GRUPO:
+
+## INTEGRANTES:
+- Camila Laureana Silva
+- Federico José Rodriguez
+- María Emilia Walter
+- Sebastian Ignacio Centurion
+
+## PERFILES en Linkedin:
+- https://linktr.ee/unerdevprogramacion1
