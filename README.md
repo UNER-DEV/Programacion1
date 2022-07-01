@@ -1,5 +1,6 @@
 # Repositorio para la materia Programacion 1 (2022)
 
+## LINK AL VIDEO DE YOUTUBE
 ## INTEGRANTES:
 - Camila Laureana Silva
 - Federico José Rodriguez
@@ -19,3 +20,4 @@
 
 ## EJECUCIÓN DEL PROYECTO
 - Abra la consola, situándose en la carpeta dónde se encuentra el archivo app.py y ejecute el siguiente comando: Python app.py
+
