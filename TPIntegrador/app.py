@@ -41,7 +41,8 @@ def refresh_all():
     global life 
     global score
     global modal
-    global modalQuestion  
+    global modalQuestion
+    global contador  
     step = 1
     user = ''
     start = ''
@@ -50,6 +51,7 @@ def refresh_all():
     score = 0
     modal = 0
     modalQuestion = 0
+    contador = 0
     
     
 
@@ -58,10 +60,12 @@ def refresh_game():
     global start 
     global life 
     global score 
+    global contador
     step = 1
     start = datetime.now().strftime("%H:%M:%S %d/%m/%Y")
     life = 3
     score = 0
+    contador = 0
 
 def pregEscalones(data):
     global step
@@ -187,15 +191,16 @@ def handle_data():
                     modalQuestion=0
                 return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life, modalQuestion = modalQuestion)
             elif(step==8):
+                print('respuesta correcta')
                 global contador
                 if(contador < 4):
                     print(f'pregunta {contador}, escalon 8')
-                    print(f'modal step8: {modalQuestion} y step: {step}')
                     contador+=1
                     return render_template('question.html', data = pregEscalones(dataLocal), step = str(step), user = user, life = life,contador=contador ,modalQuestion = modalQuestion)
             score += 1
             return finalResult()
         else:
+            print('respuesta incorrecta')
             if(step==8):
                 life = 1
                 return finalResult()
