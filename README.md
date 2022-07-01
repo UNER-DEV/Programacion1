@@ -13,7 +13,7 @@
 - Abra la consola, situándose en la carpeta dónde se encuentra el archivo app.py y ejecute el siguiente comando: Python app.py
 
 ## LINK AL VIDEO DE YOUTUBE
--
+- https://youtu.be/zu8-U46F3_A
 
 # INFORMACIÓN DEL GRUPO:
 
